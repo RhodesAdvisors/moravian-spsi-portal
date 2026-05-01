@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SPSI Project Portal · Moravian University × Rhodes Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     MORAVIAN BRAND PALETTE
+     Source: moravian.edu/identity/visual/colors
+     Moravian Blue dominant, Accent Blue for emphasis,
+     tertiary colors used sparingly for status encoding.
+     ============================================================ */
+  :root {
+    /* Primary */
+    --m-blue: #00267A;
+    --m-grey: #CCCCCC;
+    /* Secondary */
+    --accent-blue: #078CF5;
+    --light-grey: #F0F0F0;
+    --dark-grey: #666666;
+    --dark-blue: #001B56;
+    --black: #000000;
+    /* Tertiary */
+    --t-deep-green: #006668;
+    --t-red: #BC204B;
+    --t-gold: #E58200;
+    --t-green: #90C634;
+    --t-orange: #FF723B;
+    --t-yellow: #FFC23B;
+
+    /* App tokens */
+    --bg: #ffffff;
+    --bg-soft: #F0F0F0;
+    --ink: #001B56;
+    --ink-soft: #00267A;
+    --ink-mute: #666666;
+    --rule: #e3e6ee;
+    --rule-strong: #c5cad8;
+
+    /* Status mapping */
+    --s-done: #006668;
+    --s-ongoing: #00267A;
+    --s-progress: #078CF5;
+    --s-paused: #E58200;
+    --s-planned: #666666;
+    --s-reopened: #BC204B;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent-blue); color: #fff; }
+  a { color: var(--m-blue); text-decoration: none; }
+  a:hover { color: var(--accent-blue); }
+
+  /* ===== TOP BAR ===== */
+  .topbar {
+    background: var(--m-blue);
+    color: #fff;
+    border-bottom: 4px solid var(--accent-blue);
+  }
+  .topbar-inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: 14px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+  }
+  .brandmark {
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px; font-weight: 400;
+    letter-spacing: -.005em;
+  }
+  .brandmark-mark {
+    width: 36px; height: 36px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+  }
+  .topbar-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    color: rgba(255,255,255,.85);
+    display: flex; gap: 24px; align-items: center;
+  }
+  .topbar-right .live::before {
+    content: ''; display: inline-block;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--t-green);
+    margin-right: 7px; vertical-align: middle;
+    box-shadow: 0 0 0 0 rgba(144,198,52,.7);
+    animation: pulse 2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(144,198,52,.7); }
+    70% { box-shadow: 0 0 0 8px rgba(144,198,52,0); }
+    100% { box-shadow: 0 0 0 0 rgba(144,198,52,0); }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 56px 40px 40px;
+    max-width: 1440px; margin: 0 auto;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 32px; height: 2px; background: var(--accent-blue);
+  }
+  .hero-title {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.02; letter-spacing: -.022em;
+    color: var(--m-blue);
+    max-width: 22ch;
+  }
+  .hero-title strong { color: var(--m-blue); font-weight: 500; }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 17px; color: var(--ink-mute);
+    max-width: 64ch; line-height: 1.55;
+  }
+
+  /* ===== STATS ===== */
+  .stats {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    margin-top: 48px;
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+  }
+  .stat {
+    padding: 24px 28px;
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 44px; font-weight: 400;
+    line-height: 1; color: var(--m-blue);
+    letter-spacing: -.02em;
+  }
+  .stat .num .pct {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px; font-weight: 500;
+    color: var(--ink-mute);
+    margin-left: 6px; letter-spacing: 0;
+  }
+  .stat .label {
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .stat .accent-bar {
+    position: absolute; top: 0; left: 0;
+    width: 32px; height: 3px;
+  }
+  .stat:nth-child(1) .accent-bar { background: var(--m-blue); }
+  .stat:nth-child(2) .accent-bar { background: var(--accent-blue); }
+  .stat:nth-child(3) .accent-bar { background: var(--s-done); }
+  .stat:nth-child(4) .accent-bar { background: var(--s-paused); }
+  .stat:nth-child(5) .accent-bar { background: var(--ink-mute); }
+
+  /* Clickable stat (rendered as <button>, reset native styles) */
+  .stat-clickable {
+    background: transparent;
+    border: none;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    transition: background .18s ease;
+    width: 100%;
+    display: block;
+  }
+  .stat-clickable:hover {
+    background: rgba(229, 130, 0, .06);
+  }
+  .stat-clickable:hover .num {
+    color: var(--s-paused);
+  }
+  .stat-clickable:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: -3px;
+  }
+  .stat-clickable.active {
+    background: rgba(229, 130, 0, .12);
+  }
+  .stat-clickable.active .num {
+    color: var(--s-paused);
+  }
+  .stat-clickable .click-hint {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--s-paused);
+    margin-left: 6px;
+    opacity: 0;
+    transition: opacity .18s ease;
+    text-transform: uppercase;
+  }
+  .stat-clickable:hover .click-hint,
+  .stat-clickable.active .click-hint { opacity: 1; }
+  .stat-clickable.active .click-hint::before {
+    content: '✓ ';
+  }
+  .stat-clickable.active .click-hint {
+    /* Show "clear" instead of "view" when active */
+  }
+
+  /* Filter banner shown above the view when stat-filter is active */
+  .filter-banner {
+    background: var(--s-paused);
+    color: #fff;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+  }
+  .filter-banner.hidden { display: none; }
+  .filter-banner .label-block {
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap;
+  }
+  .filter-banner .icon-warn {
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+  }
+  .filter-banner strong {
+    font-weight: 600;
+    letter-spacing: .01em;
+  }
+  .filter-banner .desc {
+    font-size: 12px;
+    color: rgba(255,255,255,.85);
+  }
+  .filter-banner button {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.4);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .15s ease;
+    flex-shrink: 0;
+  }
+  .filter-banner button:hover {
+    background: rgba(255,255,255,.3);
+  }
+
+  /* ===== CONTROLS ===== */
+  .controls-wrap {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 56px; padding: 20px 0;
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(8px);
+    background: rgba(240, 240, 240, .94);
+  }
+  .controls {
+    max-width: 1440px; margin: 0 auto;
+    padding: 0 40px;
+    display: flex; align-items: center; gap: 20px;
+    flex-wrap: wrap;
+  }
+  .view-switch {
+    display: inline-flex; background: #fff;
+    border: 1px solid var(--rule-strong);
+    border-radius: 4px; overflow: hidden;
+  }
+  .view-btn {
+    background: transparent; border: none;
+    padding: 9px 16px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12.5px; font-weight: 500; letter-spacing: .02em;
+    color: var(--ink-mute); cursor: pointer;
+    transition: all .18s ease;
+    border-right: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 7px;
+  }
+  .view-btn:last-child { border-right: none; }
+  .view-btn:hover { color: var(--m-blue); background: var(--light-grey); }
+  .view-btn.active { background: var(--m-blue); color: #fff; }
+  .view-btn svg { width: 14px; height: 14px; }
+
+  .filter-group { display: flex; align-items: center; gap: 8px; }
+  .filter-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-mute); white-space: nowrap;
+  }
+  .filter-select {
+    background: #fff;
+    border: 1px solid var(--rule-strong);
+    padding: 8px 28px 8px 12px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px; color: var(--ink);
+    border-radius: 4px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path fill='%2300267A' d='M6 8L0 0h12z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 8px;
+    cursor: pointer; min-width: 140px;
+  }
+  .filter-select:focus { outline: 2px solid var(--accent-blue); outline-offset: -1px; }
+
+  .search-box {
+    flex: 1; min-width: 220px; max-width: 320px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%; background: #fff;
+    border: 1px solid var(--rule-strong);
+    padding: 8px 14px 8px 36px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px; color: var(--ink);
+    border-radius: 4px;
+  }
+  .search-box input:focus { outline: 2px solid var(--accent-blue); outline-offset: -1px; }
+  .search-box svg {
+    position: absolute; left: 12px; top: 50%;
+    transform: translateY(-50%);
+    width: 14px; height: 14px; color: var(--ink-mute);
+  }
+
+  .reset-btn {
+    background: transparent; border: none;
+    color: var(--m-blue);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px; font-weight: 500;
+    cursor: pointer; padding: 6px 8px;
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .reset-btn:hover { color: var(--accent-blue); }
+
+  .results-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-left: auto;
+  }
+  .results-count strong { color: var(--m-blue); font-weight: 500; }
+
+  /* ===== STATUS PILL ===== */
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    background: transparent;
+    white-space: nowrap;
+  }
+  .pill::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor;
+  }
+  .pill.f-done { color: var(--s-done); }
+  .pill.f-ongoing { color: var(--s-ongoing); }
+  .pill.f-progress { color: var(--s-progress); }
+  .pill.f-paused { color: var(--s-paused); }
+  .pill.f-planned { color: var(--s-planned); }
+  .pill.f-reopened { color: var(--s-reopened); }
+
+  /* ===== VIEW SECTIONS ===== */
+  .view-section {
+    padding: 40px 40px 80px;
+    max-width: 1440px; margin: 0 auto;
+  }
+  .view-section.hidden { display: none; }
+
+  /* ===== TIMELINE / GANTT ===== */
+  .gantt {
+    border: 1px solid var(--rule);
+    border-radius: 6px; overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 0 rgba(0,38,122,.04);
+  }
+  .gantt-head {
+    display: grid; grid-template-columns: 360px 1fr;
+    background: var(--m-blue); color: #fff;
+  }
+  .gantt-head-left {
+    padding: 14px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,.18);
+  }
+  .gantt-months { display: flex; }
+  .gantt-month {
+    flex: 1; padding: 14px 6px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.12);
+    min-width: 0;
+  }
+  .gantt-month:last-child { border-right: none; }
+  .gantt-month .yr {
+    display: block; font-size: 8px;
+    color: rgba(255,255,255,.55); margin-top: 2px;
+  }
+  .gantt-row {
+    display: grid; grid-template-columns: 360px 1fr;
+    border-bottom: 1px solid var(--rule);
+    transition: background .12s ease;
+    cursor: pointer;
+  }
+  .gantt-row:last-child { border-bottom: none; }
+  .gantt-row:hover { background: rgba(7, 140, 245, .04); }
+  .gantt-name {
+    padding: 14px 20px;
+    border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column; gap: 7px;
+    min-width: 0;
+  }
+  .gantt-name .title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px; font-weight: 400;
+    color: var(--ink); line-height: 1.3;
+    letter-spacing: -.005em;
+  }
+  .gantt-name .meta-row {
+    display: flex; align-items: center; gap: 10px;
+    flex-wrap: wrap;
+  }
+  .meta-text {
+    font-size: 11px; color: var(--ink-mute);
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .meta-text strong { color: var(--ink-soft); font-weight: 500; }
+  .deliv-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .06em;
+    color: var(--accent-blue);
+    background: rgba(7,140,245,.08);
+    padding: 2px 7px; border-radius: 3px; font-weight: 500;
+  }
+  .gantt-bar-track {
+    position: relative; padding: 18px 0;
+    min-height: 70px;
+  }
+  .gantt-bar-track::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc((100% / var(--month-count)) - 1px),
+      var(--rule) calc((100% / var(--month-count)) - 1px),
+      var(--rule) calc(100% / var(--month-count))
+    );
+    pointer-events: none; opacity: .55;
+  }
+  .gantt-bar-track.with-today::after {
+    content: ''; position: absolute; top: 0; bottom: 0;
+    left: var(--today-pos); width: 1.5px;
+    background: var(--t-red);
+    pointer-events: none; z-index: 2;
+  }
+  .gantt-bar {
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    background: var(--ink-mute);
+    display: flex; align-items: center; padding: 0 10px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: #fff;
+    white-space: nowrap; overflow: hidden;
+    transition: height .15s ease, box-shadow .15s ease;
+    border-radius: 3px; z-index: 1;
+  }
+  .gantt-row:hover .gantt-bar { height: 22px; box-shadow: 0 2px 8px rgba(0,38,122,.18); }
+  .bar-done { background: var(--s-done); }
+  .bar-ongoing {
+    background: var(--s-ongoing);
+    background-image: linear-gradient(90deg, transparent 0, transparent 50%, rgba(255,255,255,.18) 50%, rgba(255,255,255,.18) 100%);
+    background-size: 14px 100%;
+  }
+  .bar-progress { background: var(--s-progress); }
+  .bar-paused {
+    background: var(--s-paused);
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 4px, rgba(255,255,255,.25) 4px, rgba(255,255,255,.25) 8px);
+  }
+  .bar-planned {
+    background: transparent;
+    border: 1.5px dashed var(--s-planned);
+    color: var(--s-planned); font-weight: 500;
+  }
+  .bar-reopened {
+    background: linear-gradient(90deg, var(--s-done) 0%, var(--s-done) 60%, var(--s-reopened) 60%, var(--s-reopened) 100%);
+  }
+  .bar-marker {
+    position: absolute; top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 14px; height: 14px;
+    background: var(--s-done); z-index: 1;
+  }
+  .bar-tbd {
+    position: absolute; top: 50%; left: 12px;
+    transform: translateY(-50%);
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .bar-tbd::before {
+    content: ''; width: 36px; border-top: 1px dashed var(--ink-mute);
+  }
+
+  /* ===== LEGEND ===== */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    padding: 20px 24px;
+    background: var(--bg-soft);
+    border-radius: 4px;
+    margin-top: 24px;
+    border: 1px solid var(--rule);
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--ink-soft);
+  }
+  .legend-swatch { width: 24px; height: 12px; border-radius: 2px; }
+  .leg-done { background: var(--s-done); }
+  .leg-ongoing {
+    background: var(--s-ongoing);
+    background-image: linear-gradient(90deg, transparent 0, transparent 50%, rgba(255,255,255,.25) 50%);
+    background-size: 10px 100%;
+  }
+  .leg-progress { background: var(--s-progress); }
+  .leg-paused {
+    background: var(--s-paused);
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 3px, rgba(255,255,255,.3) 3px, rgba(255,255,255,.3) 6px);
+  }
+  .leg-planned { background: transparent; border: 1.5px dashed var(--s-planned); height: 10px; }
+  .leg-reopened { background: linear-gradient(90deg, var(--s-done) 0%, var(--s-done) 60%, var(--s-reopened) 60%); }
+  .leg-today { width: 2px; height: 14px; background: var(--t-red); border-radius: 0; }
+
+  /* ===== BOARD VIEW ===== */
+  .board {
+    display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .board-col {
+    background: var(--bg-soft);
+    border-radius: 6px;
+    border-top: 4px solid var(--ink-mute);
+    overflow: hidden; min-width: 0;
+  }
+  .board-col.f-done { border-top-color: var(--s-done); }
+  .board-col.f-ongoing { border-top-color: var(--s-ongoing); }
+  .board-col.f-progress { border-top-color: var(--s-progress); }
+  .board-col.f-paused { border-top-color: var(--s-paused); }
+  .board-col.f-planned { border-top-color: var(--s-planned); }
+  .board-col.f-reopened { border-top-color: var(--s-reopened); }
+  .board-col-head {
+    padding: 14px 16px 10px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .board-col-head h3 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .board-col-head .ct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--ink-mute);
+  }
+  .board-cards {
+    padding: 0 12px 12px;
+    display: flex; flex-direction: column; gap: 8px;
+    max-height: 600px; overflow-y: auto;
+  }
+  .board-cards::-webkit-scrollbar { width: 6px; }
+  .board-cards::-webkit-scrollbar-thumb { background: var(--rule-strong); border-radius: 3px; }
+  .board-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all .15s ease;
+  }
+  .board-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 2px 8px rgba(7,140,245,.12);
+    transform: translateY(-1px);
+  }
+  .board-card .ttl {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px; font-weight: 400;
+    color: var(--ink); line-height: 1.32;
+    margin-bottom: 8px; letter-spacing: -.005em;
+  }
+  .board-card .footer {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: .04em;
+  }
+  .board-card .owner-mini { color: var(--m-blue); font-weight: 500; }
+
+  /* ===== LIST VIEW ===== */
+  .list-table {
+    width: 100%; border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 6px; overflow: hidden;
+  }
+  .list-table thead { background: var(--m-blue); color: #fff; }
+  .list-table th {
+    padding: 14px 18px; text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 500; letter-spacing: .14em;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,.12);
+  }
+  .list-table th:last-child { border-right: none; }
+  .list-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer; transition: background .12s ease;
+  }
+  .list-table tbody tr:hover { background: rgba(7,140,245,.05); }
+  .list-table tbody tr:last-child { border-bottom: none; }
+  .list-table td {
+    padding: 14px 18px;
+    font-size: 13.5px; color: var(--ink);
+    vertical-align: middle;
+  }
+  .list-table td.cell-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.3;
+    color: var(--m-blue); max-width: 460px;
+  }
+  .list-table td.cell-meta {
+    font-size: 12px; color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: .03em; white-space: nowrap;
+  }
+  .list-table .dept-tag {
+    display: inline-block;
+    background: var(--light-grey);
+    color: var(--ink-soft);
+    font-size: 10.5px;
+    padding: 2px 7px; border-radius: 3px;
+    margin-right: 4px; margin-bottom: 3px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 500; letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  /* ===== EMPTY STATE ===== */
+  .empty-state {
+    padding: 80px 40px; text-align: center;
+    color: var(--ink-mute);
+    background: var(--bg-soft);
+    border: 1px dashed var(--rule-strong);
+    border-radius: 6px;
+  }
+  .empty-state h3 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400; font-size: 22px;
+    color: var(--m-blue); margin-bottom: 8px;
+  }
+
+  /* ===== DRAWER ===== */
+  .drawer-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(0, 27, 86, .35);
+    backdrop-filter: blur(2px);
+    z-index: 200;
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(620px, 92vw);
+    background: #fff;
+    z-index: 201;
+    transform: translateX(100%);
+    transition: transform .32s cubic-bezier(.22,.8,.36,1);
+    display: flex; flex-direction: column;
+    box-shadow: -8px 0 32px rgba(0,38,122,.18);
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-head {
+    background: var(--m-blue); color: #fff;
+    padding: 28px 32px 24px;
+    border-bottom: 4px solid var(--accent-blue);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .drawer-head .breadcrumb {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 12px;
+  }
+  .drawer-head h2 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400; font-size: 26px; line-height: 1.2;
+    letter-spacing: -.012em; color: #fff;
+  }
+  .drawer-close {
+    position: absolute; top: 20px; right: 20px;
+    background: rgba(255,255,255,.1); border: none;
+    color: #fff; width: 32px; height: 32px;
+    border-radius: 4px; cursor: pointer;
+    font-size: 18px;
+    display: grid; place-items: center;
+    transition: background .15s ease;
+  }
+  .drawer-close:hover { background: rgba(255,255,255,.22); }
+  .drawer-body { padding: 28px 32px 40px; overflow-y: auto; flex: 1; }
+  .drawer-meta-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    margin-bottom: 28px;
+    border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
+  }
+  .drawer-meta-item {
+    padding: 14px 16px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .drawer-meta-item:nth-child(2n) { border-right: none; }
+  .drawer-meta-item:nth-last-child(-n+2) { border-bottom: none; }
+  .drawer-meta-item .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-mute); margin-bottom: 6px;
+  }
+  .drawer-meta-item .val {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px; color: var(--ink);
+    font-weight: 500; line-height: 1.35;
+  }
+  .drawer-section-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 14px 0 12px;
+    border-bottom: 1px solid var(--m-blue);
+    margin-bottom: 14px;
+  }
+  .drawer-section-head h3 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 500; font-size: 18px; color: var(--m-blue);
+  }
+  .drawer-section-head .ct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--ink-mute); letter-spacing: .08em;
+  }
+  .deliv-list {
+    list-style: none;
+    display: flex; flex-direction: column;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .deliv-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    background: #fff;
+  }
+  .deliv-item:last-child { border-bottom: none; }
+  .deliv-item:nth-child(even) { background: var(--bg-soft); }
+  .deliv-item .bullet {
+    flex-shrink: 0;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    margin-top: 8px;
+  }
+  .deliv-item .text {
+    color: var(--ink); font-size: 14px; line-height: 1.45;
+    flex: 1;
+  }
+  .no-delivs {
+    padding: 24px; color: var(--ink-mute);
+    text-align: center; font-style: italic;
+    background: var(--bg-soft); border-radius: 4px;
+    font-size: 13px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--m-blue);
+    color: rgba(255,255,255,.85);
+    padding: 56px 0 32px;
+    margin-top: 80px;
+  }
+  .footer-inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: 0 40px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+  }
+  footer h4 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400; font-size: 22px;
+    color: #fff; margin-bottom: 14px;
+    letter-spacing: -.01em;
+  }
+  footer p { font-size: 14px; line-height: 1.55; max-width: 52ch; }
+  footer .colophon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  }
+  footer .colophon strong {
+    display: block; color: #fff;
+    font-weight: 500; margin-bottom: 6px; font-size: 11px;
+  }
+  footer .colophon span {
+    color: rgba(255,255,255,.65);
+    display: block; line-height: 1.7;
+  }
+  footer a { color: var(--accent-blue); border-bottom: 1px solid currentColor; }
+  footer a:hover { color: #fff; }
+  .footer-rule {
+    max-width: 1440px; margin: 40px auto 24px;
+    padding: 0 40px;
+  }
+  .footer-rule hr { border: none; border-top: 1px solid rgba(255,255,255,.15); }
+  .footer-bottom {
+    max-width: 1440px; margin: 0 auto;
+    padding: 0 40px;
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1200px) {
+    .board { grid-template-columns: repeat(3, 1fr); }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat:nth-child(n+4) { border-top: 1px solid var(--rule); }
+    .stat:nth-child(3) { border-right: none; }
+  }
+  @media (max-width: 900px) {
+    .controls, .view-section, .topbar-inner, .hero, .footer-inner, .footer-bottom, .footer-rule {
+      padding-left: 24px; padding-right: 24px;
+    }
+    .gantt-head, .gantt-row { grid-template-columns: 240px 1fr; }
+    .board { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .controls { gap: 12px; }
+    .results-count { width: 100%; margin-left: 0; order: -1; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: 1px solid var(--rule); }
+    .stat:nth-child(2n) { border-right: none; }
+    .list-table { font-size: 12px; }
+    .list-table th, .list-table td { padding: 10px 12px; }
+    .list-table .col-hide-mobile { display: none; }
+  }
+  @media (max-width: 640px) {
+    .gantt-head, .gantt-row { grid-template-columns: 1fr; }
+    .gantt-name { border-right: none; border-bottom: 1px solid var(--rule); }
+    .gantt-head-left { display: none; }
+    .gantt-month { font-size: 8px; padding: 10px 2px; }
+    .board { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--rule); }
+    .stat:last-child { border-bottom: none; }
+    .topbar-right { display: none; }
+    .drawer { width: 100%; }
+    .drawer-meta-grid { grid-template-columns: 1fr; }
+    .drawer-meta-item { border-right: none; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .gantt-row, .board-card, .list-table tbody tr {
+    animation: fadeUp .4s ease both;
+  }
+  .gantt-row { animation-delay: calc(var(--i, 0) * 12ms); }
+  .board-card { animation-delay: calc(var(--i, 0) * 18ms); }
+  .hero-title, .hero-eyebrow, .hero-sub, .stats {
+    animation: fadeUp .7s ease both;
+  }
+  .hero-eyebrow { animation-delay: .04s; }
+  .hero-title { animation-delay: .12s; }
+  .hero-sub { animation-delay: .22s; }
+  .stats { animation-delay: .32s; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brandmark">
+      <img class="brandmark-mark"
+           src="https://archives.moravian.edu/customizations/global/images/MU%20Star.png"
+           alt="Moravian University star"
+           onerror="this.style.display='none'" />
+      <span>Moravian University &nbsp;·&nbsp; School of Professional Studies & Innovation</span>
+    </div>
+    <div class="topbar-right">
+      <span class="live">Live</span>
+      <span id="topbar-date">—</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">SPSI Project Portfolio · Engagement with Rhodes Advisors</div>
+  <h1 class="hero-title">Every project. Every owner. <strong>One source of truth.</strong></h1>
+  <p class="hero-sub">A live record of the engagement between Rhodes Advisors and Moravian's School of Professional Studies & Innovation — covering enrollment strategy, market research, financial modeling, marketing operations, and the technology backbone that ties them together. Click any project for owners, deliverables, and detail.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="accent-bar"></div><div class="num" id="stat-total">—</div><div class="label">Total Projects</div></div>
+    <div class="stat"><div class="accent-bar"></div><div class="num" id="stat-active">—</div><div class="label">Currently Active</div></div>
+    <div class="stat"><div class="accent-bar"></div><div class="num" id="stat-done">—<span class="pct" id="stat-done-pct"></span></div><div class="label">Completed to Date</div></div>
+    <button class="stat stat-clickable" id="stat-attention-btn" type="button" aria-label="Filter to projects that need attention">
+      <div class="accent-bar"></div>
+      <div class="num" id="stat-attention">—</div>
+      <div class="label">Need Attention <span class="click-hint">↓ view</span></div>
+    </button>
+    <div class="stat"><div class="accent-bar"></div><div class="num" id="stat-deliv">—</div><div class="label">Deliverables Tracked</div></div>
+  </div>
+</section>
+
+<div class="controls-wrap">
+  <div class="controls">
+    <div class="view-switch">
+      <button class="view-btn active" data-view="timeline">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h8M2 8h12M2 12h6"/></svg>
+        Timeline
+      </button>
+      <button class="view-btn" data-view="board">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="3.5" height="12"/><rect x="6.25" y="2" width="3.5" height="8"/><rect x="10.5" y="2" width="3.5" height="10"/></svg>
+        Board
+      </button>
+      <button class="view-btn" data-view="list">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h12"/></svg>
+        List
+      </button>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Status</span>
+      <select class="filter-select" id="filter-status"><option value="all">All Statuses</option></select>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Owner</span>
+      <select class="filter-select" id="filter-owner"><option value="all">All Owners</option></select>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Department</span>
+      <select class="filter-select" id="filter-dept"><option value="all">All Departments</option></select>
+    </div>
+
+    <div class="search-box">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+      <input type="text" id="search-input" placeholder="Search projects…" />
+    </div>
+
+    <button class="reset-btn" id="reset-btn">Reset</button>
+
+    <div class="results-count">Showing <strong id="result-num">—</strong> of <strong id="result-total">—</strong></div>
+  </div>
+</div>
+
+<div class="filter-banner hidden" id="filter-banner">
+  <div class="label-block">
+    <svg class="icon-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+    <strong>Showing projects that need attention</strong>
+    <span class="desc" id="banner-desc">— paused or recently reopened</span>
+  </div>
+  <button id="banner-clear" type="button">Clear filter</button>
+</div>
+
+<section class="view-section" id="view-timeline">
+  <div class="gantt">
+    <div class="gantt-head">
+      <div class="gantt-head-left">Project</div>
+      <div class="gantt-months" id="gantt-months"></div>
+    </div>
+    <div id="gantt-body"></div>
+  </div>
+  <div id="timeline-empty" class="empty-state" style="display:none; margin-top:24px;">
+    <h3>No projects match these filters</h3>
+    <p>Try clearing a filter or adjusting your search.</p>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><span class="legend-swatch leg-done"></span>Done</div>
+    <div class="legend-item"><span class="legend-swatch leg-ongoing"></span>Ongoing</div>
+    <div class="legend-item"><span class="legend-swatch leg-progress"></span>In Motion</div>
+    <div class="legend-item"><span class="legend-swatch leg-paused"></span>Paused</div>
+    <div class="legend-item"><span class="legend-swatch leg-planned"></span>Planned · Scoped</div>
+    <div class="legend-item"><span class="legend-swatch leg-reopened"></span>Complete · Reopened</div>
+    <div class="legend-item"><span class="legend-swatch leg-today"></span>Today</div>
+  </div>
+</section>
+
+<section class="view-section hidden" id="view-board">
+  <div class="board" id="board-container"></div>
+  <div id="board-empty" class="empty-state" style="display:none; margin-top:24px;">
+    <h3>No projects match these filters</h3>
+    <p>Try clearing a filter or adjusting your search.</p>
+  </div>
+</section>
+
+<section class="view-section hidden" id="view-list">
+  <table class="list-table">
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Status</th>
+        <th class="col-hide-mobile">Owner</th>
+        <th class="col-hide-mobile">Department</th>
+        <th class="col-hide-mobile">Timeline</th>
+        <th class="col-hide-mobile">Deliv.</th>
+      </tr>
+    </thead>
+    <tbody id="list-body"></tbody>
+  </table>
+  <div id="list-empty" class="empty-state" style="display:none; margin-top:24px;">
+    <h3>No projects match these filters</h3>
+    <p>Try clearing a filter or adjusting your search.</p>
+  </div>
+</section>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <button class="drawer-close" id="drawer-close" aria-label="Close">×</button>
+    <div class="breadcrumb" id="drawer-breadcrumb">SPSI Project</div>
+    <h2 id="drawer-title">—</h2>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>About this portal</h4>
+      <p>This dashboard reflects the live state of all projects under the Rhodes Advisors engagement with Moravian University's School of Professional Studies & Innovation. Statuses, ownership, and deliverables are updated as work progresses; clickable links route to the corresponding workspace pages.</p>
+    </div>
+    <div class="colophon">
+      <strong>Prepared for</strong>
+      <span>Moravian University<br/>SPSI Leadership</span>
+    </div>
+    <div class="colophon">
+      <strong>Prepared by</strong>
+      <span>Rhodes Advisors<br/><a href="https://rhodesadvisors.com">rhodesadvisors.com</a></span>
+    </div>
+  </div>
+  <div class="footer-rule"><hr/></div>
+  <div class="footer-bottom">
+    <span>© 2026 Rhodes Advisors</span>
+    <span id="footer-date">—</span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     DATA + LOGIC
+     ============================================================ -->
+<script>
+const PROJECTS = [{"name": "Moravian - SPSI - Audit & Strategic Recommendations", "status": "Done", "start": "03/03/2025", "end": "05/15/2025", "owner": "Jed Smith", "departments": ["Finance", "Market Research", "Marketing", "Operations", "Technology"], "deliverables": [{"title": "Moravian - Analysis & Strategy Final Delivery"}]}, {"name": "Moravian - SPSI - BA Psychology Viability Analysis", "status": "Done", "start": "09/30/2025", "end": "12/01/2025", "owner": "Micah Arnold", "departments": ["Market Research"], "deliverables": [{"title": "Moravian - BA Psychology Viability - Research Report"}, {"title": "Moravian - Executive Recommendation Memo"}, {"title": "Moravian - Leadership Briefing Session"}]}, {"name": "Moravian - SPSI - SLT Weekly Management", "status": "Ongoing", "start": "10/01/2025", "end": "07/01/2028", "owner": "Jed Smith", "departments": ["Finance", "Marketing", "Operations", "Technology"], "deliverables": [{"title": "Moravian - SPSI - SLT Weekly Meetings"}]}, {"name": "Moravian - SPSI - Structured EAB Evaluation", "status": "Done", "start": "10/01/2025", "end": "02/26/2026", "owner": "Joe Lapin", "departments": ["Marketing"], "deliverables": [{"title": "Moravian - Checkpoint 1 - Due 11/30/25"}, {"title": "Moravian - Initial Memo (EAB)"}, {"title": "Moravian - Checkpoint 2 - Due 1/28/26"}, {"title": "Moravian - Checkpoint 3 - Due 2/26/26"}, {"title": "Moravian - Post February Oversight - Ongoing"}, {"title": "Moravian - Executive Rec Memo (EAB) (1)"}]}, {"name": "Moravian - SPSI - Team Org Support - Sr. Advisory", "status": "Done", "start": "10/15/2025", "end": "12/01/2025", "owner": "Expert Bench", "departments": ["Operations"], "deliverables": [{"title": "Moravian - New JD_AVP of Graduate & Adult Enrollment"}]}, {"name": "Moravian - Aviation Programs- Finance Validation & Planning", "status": "Done", "start": "11/01/2025", "end": "04/21/2026", "owner": "Anna Greenberg", "departments": ["Finance"], "deliverables": [{"title": "Moravian - Finance Validation v1.1 (Aviation) - Input Validation"}, {"title": "Moravian - Finance Validation v1.1 (Aviation) - Develop ROI Model"}, {"title": "Moravian - Finance Validation v1.1 (Aviation) - Review, Test, Refine"}]}, {"name": "Moravian - SPSI - Marketing Leadership", "status": "Ongoing", "start": "11/01/2025", "end": "06/30/2026", "owner": "Joe Lapin", "departments": ["Marketing", "Operations"], "deliverables": [{"title": "Moravian - M1: EAB Management & Vendor Oversight"}, {"title": "Moravian - M2: Enrollment Operations & Funnel Management"}, {"title": "Moravian - M3: Operational Process Modernization"}]}, {"name": "Moravian - SPSI - Student Journey Optimization", "status": "Complete- Reopened", "start": "11/01/2025", "end": "02/21/2026", "owner": "Joe Lapin", "departments": ["Marketing"], "deliverables": [{"title": "Moravian - M1: Student Journey Mapping & Optimization"}]}, {"name": "Moravian - SPSI - GTM Strategy - Tranche 1 (SPSI, BBA, MBA, Psychology)", "status": "Done", "start": "11/01/2025", "end": "02/27/2026", "owner": "Joe Lapin", "departments": ["Marketing"], "deliverables": [{"title": "Moravian - M2: Program Discovery Synthesis Report"}, {"title": "Moravian - M3: Messaging Framework & GTM Foundation (Strategy Document and Executive Presentation)"}, {"title": "Moravian - M4: Creative Strategy & Media Plan"}, {"title": "Moravian - M5: Campaign Prep & Early Activation"}, {"title": "Moravian - M6: Full Launch & Optimization Readiness"}, {"title": "Moravian - M1: Input Validation & Market Alignment"}, {"title": "Moravian - M2: Model Refinement & Scenario Development"}, {"title": "Moravian - M3: KPI Definition & Reporting Framework"}, {"title": "Moravian - M4: Program Launch & Campaign Development"}]}, {"name": "Moravian - SPSI - MS Cyber Market Research (Dec ‘25)", "status": "Done", "start": "11/01/2025", "end": "12/08/2025", "owner": "Micah Arnold", "departments": ["Market Research"], "deliverables": [{"title": "Moravian - MS Cybersecurity - Market Analysis Report"}]}, {"name": "Enrollment Funnel Performance Dashboard v1", "status": "Done", "start": "11/03/2025", "end": "02/26/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "Moravian - M1: Data Source access"}, {"title": "Moravian - M2: Standardize taxonomy and tagging"}, {"title": "Moravian - M3: Dashboard v1"}, {"title": "Moravian - M4: First installment, insights and recommendations"}, {"title": "Marketing & Enrollment funnel (post EAB)"}]}, {"name": "Moravian - SPSI - Finance Validation & Planning", "status": "Done", "start": "11/03/2025", "end": "12/29/2025", "owner": "Anna Greenberg", "departments": ["Finance"], "deliverables": [{"title": "Moravian - Finance Validation - Kickoff"}, {"title": "Moravian - Finance Validation - Input Validation"}, {"title": "Moravian - Finance Validation - Develop ROI Model"}, {"title": "Moravian - Finance Validation - Review, Test, Refine"}, {"title": "Moravian - Finance Validation - Presentation and Transition"}, {"title": "Moravian - Finance Validation v1.1 (Aviation) - Input Validation"}, {"title": "Moravian - Finance Validation v1.1 (Aviation) - Develop ROI Model"}, {"title": "Moravian - Finance Validation v1.1 (Aviation) - Review, Test, Refine"}]}, {"name": "Moravian - Grad & SPSI - Enrollment Leadership", "status": "Ongoing", "start": "12/01/2025", "end": "12/31/2026", "owner": "Lauren Davis", "departments": ["Recruiting/ Enrollment"], "deliverables": [{"title": "Enrollment Leadership Email Campaign"}, {"title": "Weekly Enrollment Performance Report SPSI"}, {"title": "Pipeline Review Dashboard SPSI"}, {"title": "Financial Aid Changes Communication Strategy"}, {"title": "Financial Aid Change Email Campaign by SPSI Program"}, {"title": "Enrollment Training SEM Playbook"}, {"title": "Moravian Salesforce Resource Guide"}, {"title": "SPSI Program Guides (for Archer Onboarding)"}, {"title": "SPSI Program Call Scripts (for Archer Onboarding)"}, {"title": "Historical Funnel Reporting (for Archer Onboarding)"}, {"title": "SEM Salesforce Process Training: Withdraw Process/Will Not Complete"}, {"title": "Weekly Funnel Report (SPSI & Grad Core)"}, {"title": "Communication Plan"}, {"title": "SPSI SEM Salesforce Listviews"}, {"title": "Archer to MU Salesforce Mapping"}, {"title": "MU Behavorial Science - Weekly Performance Report"}, {"title": "MU Education Programs - Weekly Performance Report"}, {"title": "M&E Board of Trustee Meeting_April 2026"}]}, {"name": "Moravian - SPSI - January - M&A - Board Presentation", "status": "Done", "start": "12/15/2025", "end": "12/23/2025", "owner": "Lee Bradshaw", "departments": ["Executive"], "deliverables": []}, {"name": "Moravian - SPSI - Rebuild the Financial Model as a Living Tool", "status": "Packaging", "start": "01/01/2026", "end": "04/30/2026", "owner": "Anna Greenberg", "departments": ["Finance"], "deliverables": [{"title": "Moravian - Fin. Model - Discovery & Technical Blueprint"}, {"title": "Moravian - Fin. Model - Assumptions Inputs & Calculation Automation"}, {"title": "Moravian - Fin. Model - Model Architecture Rebuild"}, {"title": "Moravian - Fin. Model - Forecasting & Scenario Planning"}, {"title": "Moravian - Fin. Model - Training, Launch & Transition"}, {"title": "Moravian - Fin. Model-to-Oracle Financial Reporting Summary"}]}, {"name": "Moravian - SPSI - SP26 Enrollment Miss Mitigation Plan", "status": "Ongoing", "start": "01/28/2026", "end": "08/31/2026", "owner": "Lauren Davis", "departments": ["Recruiting/ Enrollment"], "deliverables": [{"title": "Moravian - SPSI - Enrollment Miss Mitigation Plan"}]}, {"name": "Vetting AI Recruitment Enhancement Providers", "status": "Done", "start": "01/30/2026", "end": "03/06/2026", "owner": "Lauren Davis", "departments": ["Advising", "Executive", "Recruiting/ Enrollment"], "deliverables": [{"title": "Develop and Deliver a Recommendation"}, {"title": "Evaluate Each Vendor"}, {"title": "Identify Vendors"}]}, {"name": "Moravian - SPSI - Creative & Communications Optimization", "status": "Scoped - Not Started", "start": "02/01/2026", "end": "05/31/2026", "owner": "Joe Lapin", "departments": ["Marketing"], "deliverables": [{"title": "Moravian - M3: Continuous Improvement & Reporting"}, {"title": "Moravian - M2: Post-Application & Yield Communication Overhaul"}, {"title": "Moravian - M1: Collateral & Campaign Refresh"}]}, {"name": "Automate Admit notification and admittee response for SPSI", "status": "Done", "start": "02/09/2026", "end": "02/27/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Moravian - SPSI - March/April M&A - Board Presentation", "status": "Done", "start": "02/12/2026", "end": "03/17/2026", "owner": "Lee Bradshaw", "departments": ["Executive"], "deliverables": [{"title": "Quarterly Memo Prep - March 2026 M&A Committee Mtg"}, {"title": "Quarterly Transparency Report Prep - March 2026 M&A Committee Mtg"}]}, {"name": "Moravian - Hotel (Executive Briefing Memo)", "status": "Done", "start": "03/02/2026", "end": "03/30/2026", "owner": "Micah Arnold", "departments": ["Market Research"], "deliverables": [{"title": "Moravian - Hospitality Executive Briefing Memo"}]}, {"name": "Support the adoption of the spark app for all SPSI applicants", "status": "Done", "start": "03/02/2026", "end": "04/10/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Build Inquiry forms for paid landing pages", "status": "Done", "start": "03/09/2026", "end": "03/20/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Implement Groove SPSI email drip campaigns", "status": "In Progress", "start": "03/16/2026", "end": "04/24/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Moravian - SPSI - Salesforce SEM List Views", "status": "Done", "start": "03/16/2026", "end": "03/25/2026", "owner": "Lauren Davis", "departments": ["Recruiting/ Enrollment"], "deliverables": []}, {"name": "Moravian - Blue Ocean Program Opportunity Research (2026)", "status": "Midway", "start": "03/16/2026", "end": "06/06/2026", "owner": "Micah Arnold", "departments": ["Market Research"], "deliverables": [{"title": "Moravian - Blue Ocean - Kickoff & Leadership Discovery"}, {"title": "Moravian - Blue Ocean - Market Research & Competitive Landscape Analysis"}, {"title": "Moravian - Blue Ocean - Opportunity Evaluation & Program Development"}, {"title": "Moravian - Blue Ocean - Preliminary Findings (Campus Visit May 11–13)"}, {"title": "Moravian - Blue Ocean - Final Recommendations Deck (Blue Ocean Market Research 2026)"}]}, {"name": "Automate non-SPSI Grad admit notification and admittee response", "status": "Paused", "start": "03/16/2026", "end": "04/30/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "Moravian - Non-SPSI Grad Admit Automation - Assessment & Design"}, {"title": "Moravian - Non-SPSI Grad Admit Automation - Build, UAT & Deploy"}]}, {"name": "Integrate Academic Advising in Salesforce", "status": "Discovery", "start": "03/16/2026", "end": "04/30/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "Moravian - SPSI Advising in Salesforce - Build, UAT & Deploy"}, {"title": "Moravian - SPSI Advising in Salesforce - Workflow Assessment & Requirements"}]}, {"name": "Moravian - SPSI - GTM Strategy - Tranche 2 (Cyber + Aviation x 2)", "status": "Started", "start": "03/19/2026", "end": "05/29/2026", "owner": "Joe Lapin", "departments": ["Marketing"], "deliverables": [{"title": "Moravian - M1: Kickoff and Discovery"}, {"title": "Moravian - M2: Program Discovery Synthesis Report"}, {"title": "Moravian - M3: Messaging Framework & GTM Foundation"}, {"title": "Moravian - M4: Creative Execution and Marketing Activation"}, {"title": "Moravian - M5: Campaign Prep & Early Activation"}, {"title": "Moravian - M6: Full Launch & Optimization Readiness"}]}, {"name": "Moravian - SPSI - Cybersecurity Program Viability Assessment - Sprint", "status": "Packaging", "start": "03/23/2026", "end": "04/14/2026", "owner": "Micah Arnold", "departments": ["Market Research"], "deliverables": [{"title": "MS Cybersecurity Program Viability Assessment -Packet"}]}, {"name": "Build simpler inquiry forms for organic program pages", "status": "Done", "start": "03/25/2026", "end": "03/30/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "formAssembly inquiry forms for core SPSI programs on organic site"}]}, {"name": "Moravian 21C Admissions Structure Analysis", "status": "Ongoing", "start": "04/01/2026", "end": "04/08/2026", "owner": "Lauren Davis", "departments": ["Executive", "Recruiting/ Enrollment", "Technology"], "deliverables": [{"title": "Moravian 21C Admissions Structure Analysis"}]}, {"name": "30 Credit MBA Pivot - Recommendation", "status": "Done", "start": "04/01/2026", "end": "04/06/2026", "owner": "Lee Bradshaw", "departments": ["Advising", "Executive", "Finance", "Market Research", "Marketing"], "deliverables": [{"title": "30Credit MBA Pricing Advisory Memo"}, {"title": "30Credit MBA Financial Analysis"}]}, {"name": "Recommend a data warehouse platform", "status": "Not Scoped", "start": "04/01/2026", "end": "04/15/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "Develop a Data Warehouse platform recommendation"}]}, {"name": "B2B @ Moravian", "status": "Starting", "start": "04/02/2026", "end": "", "owner": "Lee Bradshaw", "departments": ["Advising"], "deliverables": []}, {"name": "Enable upsert of Archer Social leads", "status": "In Progress", "start": "04/13/2026", "end": "04/24/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Enable deposit payment for SPSI enrollment", "status": "Not Scoped", "start": "04/15/2026", "end": "05/15/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "Enable deposit payment for SPSI enrollment - Technical Spec"}, {"title": "Enable deposit payment for SPSI enrollment - Deployment with documentation"}, {"title": "Enable deposit payment for SPSI enrollment - UAT delivery"}]}, {"name": "v2 SPSI Enrollment Funnel Performance Dashboard", "status": "In Progress", "start": "04/17/2026", "end": "04/29/2026", "owner": "Mark Lazen", "departments": ["Analytics", "Technology"], "deliverables": [{"title": "v2 SPSI Enrollment Funnel Performance Dashboard - Deployment in Looker"}]}, {"name": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs", "status": "Design", "start": "04/20/2026", "end": "05/20/2026", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": [{"title": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs - Technical Spec Proposal"}, {"title": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs - Technical Spec Final"}, {"title": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs - Deployment and documentation"}, {"title": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs - UAT delivery"}]}, {"name": "CollegeVine Implementation", "status": "Incoming", "start": "04/20/2026", "end": "05/11/2026", "owner": "Lauren Davis", "departments": ["Recruiting/ Enrollment"], "deliverables": []}, {"name": "Moravian SPSI - Cyber Program Shutdown – Revenue Recovery Model", "status": "Done", "start": "04/21/2026", "end": "04/21/2026", "owner": "Anna Greenberg", "departments": ["Finance"], "deliverables": [{"title": "Build a simple model to calculate Revenue Recovery for Cyber Program Shutdown"}]}, {"name": "Moravian- SPSI- Financial Modeling (Hotel/Hospitality)", "status": "Not Scoped", "start": "", "end": "", "owner": "Anna Greenberg", "departments": ["Finance"], "deliverables": []}, {"name": "Salesforce lead cultivation reporting for SEMs", "status": "Not Scoped", "start": "", "end": "", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Track app completion", "status": "Not Scoped", "start": "", "end": "", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Populate Data Warehouse for Marketing and Enrollment Dashboards", "status": "Not Scoped", "start": "", "end": "", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Moravian - SPSI - Program(s) Course Audit", "status": "Scoped - Not Started", "start": "", "end": "", "owner": "Jed Smith", "departments": ["Advising", "Learning"], "deliverables": []}, {"name": "Moravian - SPSI - October - M&A - Board Presentation", "status": "Scoped - Not Started", "start": "", "end": "", "owner": "Lee Bradshaw", "departments": ["Executive"], "deliverables": []}, {"name": "Moravian - SPSI - August - M&A - Board Presentation", "status": "Midway", "start": "", "end": "08/07/2026", "owner": "Lee Bradshaw", "departments": ["Executive"], "deliverables": []}, {"name": "Financial Aid Tech", "status": "Not Scoped", "start": "", "end": "", "owner": "Mark Lazen", "departments": ["Technology"], "deliverables": []}, {"name": "Moravian - SPSI - LTV:CAC Modeling", "status": "Not Scoped", "start": "", "end": "", "owner": "Anna Greenberg", "departments": ["Finance"], "deliverables": [{"title": "Moravian - LTV:CAC - Framework Design and Audit"}, {"title": "Moravian - LTV:CAC - Model Development and Integration"}, {"title": "Moravian - LTV:CAC - Scenario Testing and Accountability Alignment"}, {"title": "Moravian - LTV:CAC - Presentation and Transition"}]}];
+</script>
+<script>
+(function(){
+'use strict';
+
+const STATUS_FAMILY = {
+  "Done": "done",
+  "Complete- Reopened": "reopened",
+  "Ongoing": "ongoing",
+  "In Progress": "progress",
+  "Started": "progress",
+  "Starting": "progress",
+  "Midway": "progress",
+  "Discovery": "progress",
+  "Design": "progress",
+  "Packaging": "progress",
+  "Incoming": "progress",
+  "Paused": "paused",
+  "Scoped - Not Started": "planned",
+  "Not Scoped": "planned"
+};
+const FAMILY_LABEL = {
+  done: "Done", reopened: "Reopened", ongoing: "Ongoing",
+  progress: "In Motion", paused: "Paused", planned: "Planned"
+};
+const FAMILY_ORDER = ["progress","ongoing","reopened","done","paused","planned"];
+
+function parseDate(s) {
+  if (!s) return null;
+  const parts = s.split('/');
+  if (parts.length !== 3) return null;
+  return new Date(+parts[2], +parts[0]-1, +parts[1]);
+}
+function fmtMonth(d) { return d.toLocaleString('en-US', { month: 'short' }); }
+function fmtShort(d) { return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }); }
+function cleanName(n) { return n.replace(/\s+/g,' ').trim(); }
+function displayName(n) {
+  return cleanName(n).replace(/^Moravian\s*-\s*/, '').replace(/^SPSI\s*-\s*/, '');
+}
+function escHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+// Cosmetic cleanup for department labels — fixes the awkward "Recruiting/ Enrollment" spacing
+// without changing the underlying data (so filters and matching still work identically).
+function deptLabel(d) {
+  return d.replace(/Recruiting\/\s*Enrollment/, 'Recruiting & Enrollment');
+}
+
+const projects = PROJECTS.map(p => {
+  const start = parseDate(p.start);
+  const end = parseDate(p.end);
+  const family = STATUS_FAMILY[p.status] || "planned";
+  return {
+    ...p,
+    name: cleanName(p.name),
+    display: displayName(p.name),
+    start, end, family,
+    hasDates: !!(start || end),
+    noDates: !start && !end,
+    searchBlob: (p.name + ' ' + (p.owner||'') + ' ' + (p.departments||[]).join(' ') + ' ' + p.deliverables.map(d=>d.title).join(' ')).toLowerCase()
+  };
+});
+
+const minDate = new Date(2025, 8, 1);
+const maxDate = new Date(2026, 11, 31);
+const totalMs = maxDate - minDate;
+function pctFromDate(d) {
+  if (!d) return null;
+  const c = Math.max(minDate.getTime(), Math.min(maxDate.getTime(), d.getTime()));
+  return ((c - minDate.getTime()) / totalMs) * 100;
+}
+function monthList() {
+  const out = [];
+  const d = new Date(minDate);
+  while (d <= maxDate) {
+    out.push(new Date(d));
+    d.setMonth(d.getMonth() + 1);
+  }
+  return out;
+}
+const months = monthList();
+const TODAY = new Date(2026, 3, 28);
+const todayPct = pctFromDate(TODAY);
+
+const todayStr = TODAY.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+document.getElementById('topbar-date').textContent = 'As of ' + todayStr;
+document.getElementById('footer-date').textContent = 'Last refreshed ' + todayStr;
+
+const stats = {
+  total: projects.length,
+  done: projects.filter(p => p.family === 'done').length,
+  active: projects.filter(p => ['ongoing','progress','reopened'].includes(p.family)).length,
+  attention: projects.filter(p => ['paused','reopened'].includes(p.family)).length,
+  deliv: projects.reduce((s,p)=>s + p.deliverables.length, 0)
+};
+document.getElementById('stat-total').textContent = stats.total;
+document.getElementById('stat-active').textContent = stats.active;
+document.getElementById('stat-done').firstChild.textContent = stats.done;
+document.getElementById('stat-done-pct').textContent = ' / ' + Math.round(100 * stats.done / stats.total) + '%';
+document.getElementById('stat-attention').textContent = stats.attention;
+document.getElementById('stat-deliv').textContent = stats.deliv;
+
+const owners = [...new Set(projects.map(p => p.owner).filter(Boolean))].sort();
+const depts = [...new Set(projects.flatMap(p => p.departments))].sort();
+const statusFamilies = [...new Set(projects.map(p => p.family))]
+  .sort((a,b) => FAMILY_ORDER.indexOf(a) - FAMILY_ORDER.indexOf(b));
+
+function fillSelect(id, opts, formatter) {
+  const sel = document.getElementById(id);
+  opts.forEach(o => {
+    const el = document.createElement('option');
+    el.value = o;
+    el.textContent = formatter ? formatter(o) : o;
+    sel.appendChild(el);
+  });
+}
+fillSelect('filter-status', statusFamilies, f => `${FAMILY_LABEL[f]} (${projects.filter(p=>p.family===f).length})`);
+fillSelect('filter-owner', owners, o => `${o} (${projects.filter(p=>p.owner===o).length})`);
+fillSelect('filter-dept', depts, d => `${deptLabel(d)} (${projects.filter(p=>p.departments.includes(d)).length})`);
+
+const state = { view: 'timeline', status: 'all', owner: 'all', dept: 'all', search: '', attentionMode: false };
+
+// Families that constitute "needs attention" — paused work and reopened/regressed projects
+const ATTENTION_FAMILIES = ['paused', 'reopened'];
+
+function getFiltered() {
+  return projects.filter(p => {
+    // Attention mode short-circuits to only show paused + reopened
+    if (state.attentionMode && !ATTENTION_FAMILIES.includes(p.family)) return false;
+    if (state.status !== 'all' && p.family !== state.status) return false;
+    if (state.owner !== 'all' && p.owner !== state.owner) return false;
+    if (state.dept !== 'all' && !p.departments.includes(state.dept)) return false;
+    if (state.search && !p.searchBlob.includes(state.search)) return false;
+    return true;
+  });
+}
+
+const monthsEl = document.getElementById('gantt-months');
+months.forEach(m => {
+  const div = document.createElement('div');
+  div.className = 'gantt-month';
+  div.innerHTML = `${fmtMonth(m)}<span class="yr">'${String(m.getFullYear()).slice(2)}</span>`;
+  monthsEl.appendChild(div);
+});
+
+function dateLine(p) {
+  if (p.start && p.end) return `${fmtShort(p.start)} → ${fmtShort(p.end)}`;
+  if (p.start) return `${fmtShort(p.start)} → tbd`;
+  if (p.end) return `tbd → ${fmtShort(p.end)}`;
+  return 'Dates not yet scoped';
+}
+
+function renderTimeline(items) {
+  const body = document.getElementById('gantt-body');
+  body.innerHTML = '';
+  const sorted = [...items].sort((a,b) => {
+    if (a.start && b.start) return a.start - b.start;
+    if (a.start && !b.start) return -1;
+    if (!a.start && b.start) return 1;
+    return a.name.localeCompare(b.name);
+  });
+  sorted.forEach((p, i) => {
+    const row = document.createElement('div');
+    row.className = 'gantt-row';
+    row.style.setProperty('--i', i);
+    row.addEventListener('click', () => openDrawer(p));
+
+    let barHTML = '';
+    if (p.noDates) {
+      barHTML = `<div class="bar-tbd">to be scoped</div>`;
+    } else {
+      const startD = p.start || p.end;
+      const endD = p.end || p.start;
+      const sp = pctFromDate(startD);
+      const ep = pctFromDate(endD);
+      const w = Math.max(ep - sp, 0.6);
+      if (p.start && p.end && p.start.getTime() === p.end.getTime()) {
+        barHTML = `<div class="bar-marker" style="left:${sp}%"></div>`;
+      } else {
+        barHTML = `<div class="gantt-bar bar-${p.family}" style="left:${sp}%; width:${w}%"></div>`;
+      }
+    }
+
+    const ownerHTML = p.owner ? `<span class="meta-text"><strong>${escHTML(p.owner)}</strong></span>` : '';
+    const delivHTML = p.deliverables.length ? `<span class="deliv-count">${p.deliverables.length} deliv.</span>` : '';
+
+    row.innerHTML = `
+      <div class="gantt-name">
+        <div class="title">${escHTML(p.display)}</div>
+        <div class="meta-row">
+          <span class="pill f-${p.family}">${escHTML(p.status)}</span>
+          ${ownerHTML}
+          ${delivHTML}
+        </div>
+        <div class="meta-text" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em;">${dateLine(p)}</div>
+      </div>
+      <div class="gantt-bar-track ${p.hasDates ? 'with-today' : ''}" style="--month-count:${months.length}; --today-pos:${todayPct}%">
+        ${barHTML}
+      </div>
+    `;
+    body.appendChild(row);
+  });
+  document.getElementById('timeline-empty').style.display = sorted.length === 0 ? 'block' : 'none';
+}
+
+function renderBoard(items) {
+  const container = document.getElementById('board-container');
+  container.innerHTML = '';
+  document.getElementById('board-empty').style.display = items.length === 0 ? 'block' : 'none';
+
+  FAMILY_ORDER.forEach(f => {
+    const inFam = items.filter(p => p.family === f);
+    if (inFam.length === 0 && state.status !== 'all') return;
+    const col = document.createElement('div');
+    col.className = `board-col f-${f}`;
+    col.innerHTML = `
+      <div class="board-col-head">
+        <h3>${FAMILY_LABEL[f]}</h3>
+        <span class="ct">${inFam.length}</span>
+      </div>
+      <div class="board-cards"></div>
+    `;
+    const cards = col.querySelector('.board-cards');
+    inFam.forEach((p, i) => {
+      const card = document.createElement('div');
+      card.className = 'board-card';
+      card.style.setProperty('--i', i);
+      card.addEventListener('click', () => openDrawer(p));
+      card.innerHTML = `
+        <div class="ttl">${escHTML(p.display)}</div>
+        <div class="footer">
+          <span class="owner-mini">${escHTML(p.owner || '—')}</span>
+          <span>${p.deliverables.length ? p.deliverables.length + ' deliv.' : '·'}</span>
+        </div>
+        <div class="footer" style="margin-top:6px;">
+          <span style="font-size:9.5px;">${dateLine(p)}</span>
+        </div>
+      `;
+      cards.appendChild(card);
+    });
+    container.appendChild(col);
+  });
+}
+
+function renderList(items) {
+  const tbody = document.getElementById('list-body');
+  tbody.innerHTML = '';
+  document.getElementById('list-empty').style.display = items.length === 0 ? 'block' : 'none';
+  const sorted = [...items].sort((a,b) => {
+    const fa = FAMILY_ORDER.indexOf(a.family);
+    const fb = FAMILY_ORDER.indexOf(b.family);
+    if (fa !== fb) return fa - fb;
+    return a.name.localeCompare(b.name);
+  });
+  sorted.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.addEventListener('click', () => openDrawer(p));
+    const deptHTML = p.departments.map(d => `<span class="dept-tag">${escHTML(deptLabel(d))}</span>`).join('');
+    tr.innerHTML = `
+      <td class="cell-title">${escHTML(p.display)}</td>
+      <td><span class="pill f-${p.family}">${escHTML(p.status)}</span></td>
+      <td class="col-hide-mobile">${escHTML(p.owner || '—')}</td>
+      <td class="col-hide-mobile">${deptHTML || '—'}</td>
+      <td class="cell-meta col-hide-mobile">${dateLine(p)}</td>
+      <td class="cell-meta col-hide-mobile" style="text-align:center;">${p.deliverables.length || '—'}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function updateCount(n) {
+  document.getElementById('result-num').textContent = n;
+  document.getElementById('result-total').textContent = projects.length;
+}
+
+function showView(v) {
+  state.view = v;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === v));
+  ['timeline','board','list'].forEach(name => {
+    document.getElementById('view-' + name).classList.toggle('hidden', name !== v);
+  });
+  rerender();
+}
+
+function rerender() {
+  const items = getFiltered();
+  updateCount(items.length);
+  if (state.view === 'timeline') renderTimeline(items);
+  else if (state.view === 'board') renderBoard(items);
+  else renderList(items);
+}
+
+const drawer = document.getElementById('drawer');
+const drawerBackdrop = document.getElementById('drawer-backdrop');
+function openDrawer(p) {
+  document.getElementById('drawer-title').textContent = p.display;
+  document.getElementById('drawer-breadcrumb').textContent = `SPSI Project · ${p.status}`;
+
+  const durationStr = (() => {
+    if (!p.start || !p.end) return '—';
+    const days = Math.max(1, Math.round((p.end - p.start) / 86400000));
+    if (days < 31) return `${days} day${days===1?'':'s'}`;
+    const m = Math.round(days / 30.4);
+    return `${m} month${m===1?'':'s'}`;
+  })();
+
+  const deptHTML = p.departments.length
+    ? p.departments.map(d => `<span class="dept-tag" style="display:inline-block;background:var(--light-grey);color:var(--ink-soft);font-size:11px;padding:2px 8px;border-radius:3px;margin-right:4px;margin-bottom:3px;font-weight:500;">${escHTML(deptLabel(d))}</span>`).join(' ')
+    : '—';
+
+  const delivHTML = p.deliverables.length
+    ? `<ul class="deliv-list">${p.deliverables.map(d => `
+        <li class="deliv-item">
+          <span class="bullet"></span>
+          <span class="text">${escHTML(d.title)}</span>
+        </li>`).join('')}</ul>`
+    : `<div class="no-delivs">No deliverables tracked for this project.</div>`;
+
+  document.getElementById('drawer-body').innerHTML = `
+    <div class="drawer-meta-grid">
+      <div class="drawer-meta-item">
+        <div class="lbl">Status</div>
+        <div class="val"><span class="pill f-${p.family}">${escHTML(p.status)}</span></div>
+      </div>
+      <div class="drawer-meta-item">
+        <div class="lbl">Owner</div>
+        <div class="val">${escHTML(p.owner || '—')}</div>
+      </div>
+      <div class="drawer-meta-item">
+        <div class="lbl">Timeline</div>
+        <div class="val" style="font-family:'JetBrains Mono',monospace;font-size:12.5px;">${dateLine(p)}</div>
+      </div>
+      <div class="drawer-meta-item">
+        <div class="lbl">Duration</div>
+        <div class="val">${durationStr}</div>
+      </div>
+      <div class="drawer-meta-item" style="grid-column: span 2; border-right:none;">
+        <div class="lbl">Departments</div>
+        <div class="val">${deptHTML}</div>
+      </div>
+    </div>
+    <div class="drawer-section-head">
+      <h3>Deliverables</h3>
+      <span class="ct">${p.deliverables.length} ITEM${p.deliverables.length===1?'':'S'}</span>
+    </div>
+    ${delivHTML}
+  `;
+
+  drawer.classList.add('open');
+  drawerBackdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  drawerBackdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+drawerBackdrop.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+document.querySelectorAll('.view-btn').forEach(b => b.addEventListener('click', () => showView(b.dataset.view)));
+document.getElementById('filter-status').addEventListener('change', e => {
+  state.status = e.target.value;
+  // Manual status filter overrides attention mode
+  if (state.attentionMode) setAttentionMode(false);
+  rerender();
+});
+document.getElementById('filter-owner').addEventListener('change', e => { state.owner = e.target.value; rerender(); });
+document.getElementById('filter-dept').addEventListener('change', e => { state.dept = e.target.value; rerender(); });
+document.getElementById('search-input').addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); rerender(); });
+document.getElementById('reset-btn').addEventListener('click', () => {
+  state.status = 'all'; state.owner = 'all'; state.dept = 'all'; state.search = '';
+  document.getElementById('filter-status').value = 'all';
+  document.getElementById('filter-owner').value = 'all';
+  document.getElementById('filter-dept').value = 'all';
+  document.getElementById('search-input').value = '';
+  setAttentionMode(false);
+  rerender();
+});
+
+// ---------- Attention Mode ----------
+const attentionBtn = document.getElementById('stat-attention-btn');
+const filterBanner = document.getElementById('filter-banner');
+const bannerDesc = document.getElementById('banner-desc');
+const bannerClear = document.getElementById('banner-clear');
+const clickHint = attentionBtn.querySelector('.click-hint');
+
+function setAttentionMode(on) {
+  state.attentionMode = on;
+  attentionBtn.classList.toggle('active', on);
+  filterBanner.classList.toggle('hidden', !on);
+  clickHint.textContent = on ? 'clear' : '↓ view';
+
+  if (on) {
+    // Build a description listing the in-scope status labels actually present
+    const items = projects.filter(p => ATTENTION_FAMILIES.includes(p.family));
+    const statuses = [...new Set(items.map(p => p.status))];
+    const ct = items.length;
+    bannerDesc.textContent = `— ${ct} project${ct === 1 ? '' : 's'} (${statuses.join(', ').toLowerCase()})`;
+    // Scroll to controls so user sees the filtered results
+    const controlsTop = document.querySelector('.controls-wrap').getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: controlsTop - 8, behavior: 'smooth' });
+  }
+}
+
+attentionBtn.addEventListener('click', () => {
+  setAttentionMode(!state.attentionMode);
+  rerender();
+});
+bannerClear.addEventListener('click', () => {
+  setAttentionMode(false);
+  rerender();
+});
+// Disable the click if there are 0 attention items
+if (stats.attention === 0) {
+  attentionBtn.disabled = true;
+  attentionBtn.style.cursor = 'default';
+  attentionBtn.style.opacity = '0.6';
+  clickHint.textContent = 'none';
+  clickHint.style.opacity = '1';
+  clickHint.style.color = 'var(--ink-mute)';
+}
+
+rerender();
+})();
+</script>
+</body>
+</html>
