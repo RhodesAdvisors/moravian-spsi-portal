@@ -4,6 +4,7 @@
 # Secrets — never commit
 .vercel-token
 .github-token
+git-askpass.sh
 
 # Daily archive copies — useful local history, but no need in the repo
 archive/
