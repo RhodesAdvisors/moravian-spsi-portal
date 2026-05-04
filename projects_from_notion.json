@@ -1,710 +1,5 @@
 [
   {
-    "name": "Moravian - SPSI - Audit & Strategic Recommendations",
-    "status": "Done",
-    "start": "2025-03-03",
-    "end": "2025-05-15",
-    "owner_id": "user://280d872b-594c-810c-8368-00023c0a1439",
-    "departments": [
-      "Operations",
-      "Technology",
-      "Marketing",
-      "Market Research",
-      "Finance"
-    ],
-    "project_description": "",
-    "description": "The project delivers an audit and strategic recommendations for Moravian SPSI, covering finance, market research, marketing, operations, and technology, and outlines its goals and context.",
-    "deliverables": [
-      "https://app.notion.com/p/2a1ab062993080bab7ccf2beaa9036db"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - BA Psychology Viability Analysis",
-    "status": "Done",
-    "start": "2025-09-30",
-    "end": "2025-12-01",
-    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
-    "departments": [
-      "Market Research"
-    ],
-    "project_description": "",
-    "description": "Moravian’s BA Well‑Being Psychology project, conducted by the Market Research department, has been completed, with Micah Arnold as owner and Lee Bradshaw consulted.",
-    "deliverables": [
-      "https://app.notion.com/p/293ab062993081539902f1c0cf8d6d6d",
-      "https://app.notion.com/p/293ab06299308117a102c79e005ed709",
-      "https://app.notion.com/p/293ab062993081bcaa0ac7e44882d966"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - SLT  Weekly Management",
-    "status": "Ongoing",
-    "start": "2025-10-01",
-    "end": "2028-07-01",
-    "owner_id": "user://280d872b-594c-810c-8368-00023c0a1439",
-    "departments": [
-      "Operations",
-      "Finance",
-      "Marketing",
-      "Technology"
-    ],
-    "project_description": "Supporting Moravian’s SPSI/SLT team by setting up a weekly account management and meeting hub to track workstreams, align financial projections and KPIs, and document discovery and updates from Oct 2025–Jul 2028.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2ccab062993080c7a311d47a72503f4a"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Structured EAB Evaluation",
-    "status": "Done",
-    "start": "2025-10-01",
-    "end": "2026-02-26",
-    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
-    "departments": [
-      "Marketing"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2b1ab06299308066acc9dcba920db5a0",
-      "https://app.notion.com/p/294ab0629930802ebdc2e01b904c6c62",
-      "https://app.notion.com/p/2b1ab06299308083b020ffce51a097d9",
-      "https://app.notion.com/p/2b1ab062993080bea721de915fa19782",
-      "https://app.notion.com/p/2b1ab062993080bcb96bd9d5871956bc",
-      "https://app.notion.com/p/2b1ab06299308040a986fb71a7b5dcfb"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Team Org Support - Sr. Advisory",
-    "status": "Done",
-    "start": "2025-10-15",
-    "end": "2025-12-01",
-    "owner_id": "space_permission_group-abbf66b9-40d1-4c0c-9e0d-507046d5d911",
-    "departments": [
-      "Operations"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2a6ab06299308021a606df8e0d98843d"
-    ]
-  },
-  {
-    "name": "Moravian - Aviation Programs- Finance Validation & Planning",
-    "status": "Done",
-    "start": "2025-11-01",
-    "end": "2026-04-21",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/68daf4b6dfda478da19ff19ca7ee5db0",
-      "https://app.notion.com/p/eeaa9eb84cca4ec297999acffc334b80",
-      "https://app.notion.com/p/82d046a3c8ed4d529653df509b830eee"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - GTM Strategy - Tranche 1 (SPSI, BBA, MBA, Psychology) ",
-    "status": "Done",
-    "start": "2025-11-01",
-    "end": "2026-02-27",
-    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
-    "departments": [
-      "Marketing"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2a3ab06299308067b76fd32d5c46b0d4",
-      "https://app.notion.com/p/2a3ab062993080d5a36fe4312e0fc1ed",
-      "https://app.notion.com/p/2a3ab0629930803cb96cdbee3e42ccb2",
-      "https://app.notion.com/p/2a3ab062993080a68b55c905191144e2",
-      "https://app.notion.com/p/2a3ab0629930804983aec08088ae3c95",
-      "https://app.notion.com/p/2a3ab06299308017aef5df570bbc1078",
-      "https://app.notion.com/p/2a3ab06299308095a3b0f99efa37be1d",
-      "https://app.notion.com/p/2a3ab0629930806db023cd9b2260a564",
-      "https://app.notion.com/p/2a3ab06299308049b46af7717638b2cc"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - MS Cyber Market Research (Dec ‘25)",
-    "status": "Done",
-    "start": "2025-11-01",
-    "end": "2025-12-08",
-    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
-    "departments": [
-      "Market Research"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2bfab0629930809899d9f3dc81908f8d"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Marketing Leadership",
-    "status": "Ongoing",
-    "start": "2025-11-01",
-    "end": "2026-06-30",
-    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
-    "departments": [
-      "Marketing",
-      "Operations"
-    ],
-    "project_description": "Supporting Moravian’s adult and graduate enrollment marketing leadership by strengthening governance and vendor accountability, delivering a performance management framework, cross-functional workflows, a funnel dashboard, and an operational playbook from Nov 2025–Jun 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2a3ab062993080fa8696e2ec1b0cd978",
-      "https://app.notion.com/p/2a3ab062993080c29343ea49337098d7",
-      "https://app.notion.com/p/2a3ab06299308050aa70e16a1e8c4412"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Student Journey Optimization",
-    "status": "In Progress",
-    "start": "2025-11-01",
-    "end": "2026-02-21",
-    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
-    "departments": [
-      "Marketing"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2a3ab062993080e78a79c16f0387ecbe"
-    ]
-  },
-  {
-    "name": "Enrollment Funnel Performance Dashboard v1",
-    "status": "Done",
-    "start": "2025-11-03",
-    "end": "2026-02-26",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2a8ab062993080ac97f0c9c3999afaf8",
-      "https://app.notion.com/p/2a8ab0629930805aa0aad652c6337e0f",
-      "https://app.notion.com/p/2a8ab06299308070abe4fb91511bc85f",
-      "https://app.notion.com/p/2a8ab062993080c8ad97daa3fcba8b75",
-      "https://app.notion.com/p/ae81676c507e4c178242cffe129241fb"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Finance Validation & Planning",
-    "status": "Done",
-    "start": "2025-11-03",
-    "end": "2025-12-29",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/29eab0629930808ea7dadcc968572f80",
-      "https://app.notion.com/p/29eab0629930804abeccf3f7b038e966",
-      "https://app.notion.com/p/29eab062993080d9a1b6e8c8b88bd372",
-      "https://app.notion.com/p/29eab06299308057b574d4851e3f1dcd",
-      "https://app.notion.com/p/29eab0629930804fb054f352b652c0df",
-      "https://app.notion.com/p/68daf4b6dfda478da19ff19ca7ee5db0",
-      "https://app.notion.com/p/eeaa9eb84cca4ec297999acffc334b80",
-      "https://app.notion.com/p/82d046a3c8ed4d529653df509b830eee"
-    ]
-  },
-  {
-    "name": "Moravian - Grad & SPSI - Enrollment Leadership",
-    "status": "Ongoing",
-    "start": "2025-12-01",
-    "end": "2026-12-31",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Recruiting/ Enrollment"
-    ],
-    "project_description": "Partnering with Moravian to strengthen graduate and SPSI enrollment leadership, aligning recruiting and enrollment priorities and delivering a clear leadership and operating plan, running from Dec 2025 through Dec 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/34aab0629930808d9e2fd3fb3e25fa3b",
-      "https://app.notion.com/p/34aab062993080fb9779d1f9d16012e6",
-      "https://app.notion.com/p/34aab062993080ce98bddc5d6e4f5c25",
-      "https://app.notion.com/p/34aab06299308049b31be92174d08bee",
-      "https://app.notion.com/p/34bab06299308009b95ec6826f1de160",
-      "https://app.notion.com/p/34bab0629930807ebc5ad2ee7d8dd6e3",
-      "https://app.notion.com/p/34bab0629930804995d8d86b6475820f",
-      "https://app.notion.com/p/34bab062993080e5a697ca86e96aa811",
-      "https://app.notion.com/p/34bab062993080a78544d964f89f31a7",
-      "https://app.notion.com/p/34bab062993080f58ca7d51778270abe",
-      "https://app.notion.com/p/34bab0629930801dbc8fcfe62c6ee2b2",
-      "https://app.notion.com/p/34bab0629930804888aad8a1fb6c5534",
-      "https://app.notion.com/p/34bab0629930805f896ad6e2a6689829",
-      "https://app.notion.com/p/34bab062993080d29635dde714449118",
-      "https://app.notion.com/p/34bab0629930800c9df2edc8cc7e9e4e",
-      "https://app.notion.com/p/34bab062993080388a76d7af5ea68e6c",
-      "https://app.notion.com/p/34bab062993080669354e8e7bf63e087",
-      "https://app.notion.com/p/34bab0629930808d97eff54219afa1cd"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - January - M&A - Board Presentation",
-    "status": "Done",
-    "start": "2025-12-15",
-    "end": "2025-12-23",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Executive"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Moravian - SPSI - Rebuild the Financial Model as a Living Tool",
-    "status": "Done",
-    "start": "2026-01-01",
-    "end": "2026-04-30",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2afab062993080489243c4705be7e728",
-      "https://app.notion.com/p/2afab0629930800b8191d520b99157d8",
-      "https://app.notion.com/p/2afab062993080d5b9d1e4feb4acfe77",
-      "https://app.notion.com/p/2afab062993080859d40d104a18c4e3d",
-      "https://app.notion.com/p/2afab0629930803588a7ffb5546dd9a2",
-      "https://app.notion.com/p/2afab06299308066a020ce7233ee2381"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - SP26 Enrollment Miss Mitigation Plan",
-    "status": "Ongoing",
-    "start": "2026-01-28",
-    "end": "2026-08-31",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Recruiting/ Enrollment"
-    ],
-    "project_description": "Partnering with Moravian to develop an SP26 enrollment miss mitigation plan and supporting analysis, delivering a clear mitigation roadmap and recommendations running from Jan–Aug 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2fdab062993080e786efc486fb92aace"
-    ]
-  },
-  {
-    "name": "Vetting AI Recruitment Enhancement Providers",
-    "status": "Done",
-    "start": "2026-01-30",
-    "end": "2026-03-06",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Executive",
-      "Recruiting/ Enrollment",
-      "Advising"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2fdab0629930800bbe76ce327917e8a3",
-      "https://app.notion.com/p/2fdab062993080d2b30ad5f15bca6332",
-      "https://app.notion.com/p/2fdab062993080b6b524d4ee83a18d59"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Creative & Communications Optimization",
-    "status": "Scoped - Not Started",
-    "start": "2026-02-01",
-    "end": "2026-05-31",
-    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
-    "departments": [
-      "Marketing"
-    ],
-    "project_description": "Supporting Moravian with creative and communications optimization for adult undergraduate and graduate programs, refining collateral and multi-channel campaigns to clarify value proposition and improve funnel messaging from Feb–May 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2a3ab0629930801d8c7bc57bbc2e5f35",
-      "https://app.notion.com/p/2a3ab062993080efb578e188e9c7c52a",
-      "https://app.notion.com/p/2a3ab062993080c59ed1f51c953beb84"
-    ]
-  },
-  {
-    "name": "Automate Admit notification and admittee response for SPSI",
-    "status": "Done",
-    "start": "2026-02-09",
-    "end": "2026-02-27",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Moravian - SPSI - March/April M&A - Board Presentation",
-    "status": "Done",
-    "start": "2026-02-12",
-    "end": "2026-03-17",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Executive"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/30cab062993080b9b61ac551cbf2aebb",
-      "https://app.notion.com/p/30cab0629930803eba26d097059bd1a0"
-    ]
-  },
-  {
-    "name": "Moravian - Hotel (Executive Briefing Memo)",
-    "status": "Done",
-    "start": "2026-03-02",
-    "end": "2026-03-30",
-    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
-    "departments": [
-      "Market Research"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/330ab0629930801ea52ccec6ac83dc0c"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Program(s) Course Audit",
-    "status": "In Progress",
-    "start": "2026-03-02",
-    "end": "2026-05-15",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Advising",
-      "Learning"
-    ],
-    "project_description": "Partnering with Moravian to audit program courses and recommend improvements, providing an independent review and actionable recommendations for academic quality starting March 2026.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Support the adoption of the spark app for all SPSI applicants",
-    "status": "Done",
-    "start": "2026-03-02",
-    "end": "2026-04-10",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Build Inquiry forms for paid landing pages",
-    "status": "Done",
-    "start": "2026-03-09",
-    "end": "2026-03-20",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Automate non-SPSI Grad admit notification and admittee response",
-    "status": "Paused",
-    "start": "2026-03-16",
-    "end": "2026-04-30",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Partnering with Moravian to automate non-SPSI graduate admit notifications and admittee responses, streamlining communications and workflow for the Technology team from Mar–Apr 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/f584ce7e82984d289b4eb66ef426dc7a",
-      "https://app.notion.com/p/65053ea6ebb24fe29f7b42823e56ab6e"
-    ]
-  },
-  {
-    "name": "Implement Groove SPSI email drip campaigns",
-    "status": "Live / Monitoring",
-    "start": "2026-03-16",
-    "end": "2026-04-24",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Integrate Academic Advising in Salesforce",
-    "status": "Discovery",
-    "start": "2026-03-16",
-    "end": "2026-06-01",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Integrating academic advising workflows into Salesforce by assessing current processes and defining a recommended approach, with requirements and implementation planning running from Mar–Apr 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/d0a9d9729db74987ba0e53a2421bccb4",
-      "https://app.notion.com/p/86c8dfe484e34f9898fca8e596eb7108"
-    ]
-  },
-  {
-    "name": "Moravian - Blue Ocean Program Opportunity Research (2026)",
-    "status": "Midway",
-    "start": "2026-03-16",
-    "end": "2026-06-06",
-    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
-    "departments": [
-      "Market Research"
-    ],
-    "project_description": "Supporting Moravian University (Mar–Jun 2026) with blue-ocean market research and competitive analysis to identify and prioritize 2–3 new program opportunities, with recommendations and sequencing guidance for future development.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/7610b2a3da3242e29b34eeaab6708794",
-      "https://app.notion.com/p/52c1edfc459a4ae0b83289993a2c9c4f",
-      "https://app.notion.com/p/c1d008587dc8455d80edbac78ad25100",
-      "https://app.notion.com/p/ce8fba20c49e4085977026adc00a6a4e",
-      "https://app.notion.com/p/e2b2f47bc8254f6abc9c558e849780cf"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Salesforce SEM List Views",
-    "status": "Done",
-    "start": "2026-03-16",
-    "end": "2026-03-25",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Recruiting/ Enrollment"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/34bab062993080d29635dde714449118"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - GTM Strategy - Tranche 2 (Aviation Programs)",
-    "status": "In Progress",
-    "start": "2026-03-19",
-    "end": "2026-05-29",
-    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
-    "departments": [
-      "Marketing"
-    ],
-    "project_description": "Partnering with Moravian University to develop and execute a program-specific go-to-market strategy for SPSI Tranche 1 programs (Cyber, Aviation, and CG AA), from Mar–May 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/2c6ab0629930804ca6cbdd906832e66a",
-      "https://app.notion.com/p/2c6ab06299308017a45ac06ff38160ab",
-      "https://app.notion.com/p/2c6ab0629930800697bce557f115271a",
-      "https://app.notion.com/p/2c6ab0629930808d92c9f93ff525c90d",
-      "https://app.notion.com/p/2c6ab062993080bcab6ad64eca6a6943",
-      "https://app.notion.com/p/2c6ab062993080c0afabe21a712a8108"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - Cybersecurity Program Viability Assessment - Sprint",
-    "status": "Done",
-    "start": "2026-03-23",
-    "end": "2026-04-14",
-    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
-    "departments": [
-      "Market Research"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/330ab062993080e0884eebd3145f1121"
-    ]
-  },
-  {
-    "name": "Build simpler inquiry forms for organic program pages",
-    "status": "Done",
-    "start": "2026-03-25",
-    "end": "2026-03-30",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/334ab062993080ec99f6e6360f33c22b"
-    ]
-  },
-  {
-    "name": "30 Credit MBA Pivot - Recommendation",
-    "status": "Done",
-    "start": "2026-04-01",
-    "end": "2026-04-06",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Finance",
-      "Marketing",
-      "Executive",
-      "Advising",
-      "Market Research"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/33aab062993080609cb0c36079890e75",
-      "https://app.notion.com/p/33aab0629930807da2d7eb6c9fb65108"
-    ]
-  },
-  {
-    "name": "Moravian 21C Admissions Structure Analysis",
-    "status": "Ongoing",
-    "start": "2026-04-01",
-    "end": "2026-04-08",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Recruiting/ Enrollment",
-      "Technology",
-      "Executive"
-    ],
-    "project_description": "Supporting Moravian University with a 21C admissions operations structure analysis, providing enrollment and technology feedback and recommendations in a revised admissions operations document, running Apr 1–8, 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/33cab062993080738705d0bcbd0c2011"
-    ]
-  },
-  {
-    "name": "Form a POV: B2B @ Moravian",
-    "status": "In Progress",
-    "start": "2026-04-02",
-    "end": "2026-06-01",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Advising"
-    ],
-    "project_description": "Supporting Moravian’s exploration of a B2B corporate cohort strategy, aligning internal stakeholders and developing a recommended approach and plan for engaging the university beginning April 2026.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Enable upsert of Archer Social leads",
-    "status": "Live / Monitoring",
-    "start": "2026-04-13",
-    "end": "2026-04-24",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Enable deposit payment for SPSI enrollment",
-    "status": "Not Scoped",
-    "start": "2026-04-15",
-    "end": "2026-05-15",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Implement deposit payment capability for SPSI enrollment, defining Salesforce field mechanics and automation needs and delivering an implementation plan and rollout support from Apr–May 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/348ab0629930802d9feac8db0306bb58",
-      "https://app.notion.com/p/348ab0629930801ea757ee389ffa0057",
-      "https://app.notion.com/p/348ab06299308003915eee0a2a5b2fd6"
-    ]
-  },
-  {
-    "name": "v2 SPSI Enrollment Funnel Performance Dashboard",
-    "status": "In Progress",
-    "start": "2026-04-17",
-    "end": "2026-04-29",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology",
-      "Analytics"
-    ],
-    "project_description": "Developing a v2 SPSI enrollment funnel performance dashboard with filterable charts and tables from Salesforce data, covering inquiry-to-deposit stages and source/conversion insights, running Apr 17–29, 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/348ab0629930801f8aa8d245a8bcc894"
-    ]
-  },
-  {
-    "name": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs",
-    "status": "Design",
-    "start": "2026-04-20",
-    "end": "2026-05-20",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Building an integration between SPSI Salesforce and Archer to support Archer SEM workflows and data exchange, delivering the required technical specification and implementation plan, running from Apr–May 2026.",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/348ab062993080f3a757ecee8b8729e2",
-      "https://app.notion.com/p/348ab062993080ef931ced346d3c18f6",
-      "https://app.notion.com/p/348ab0629930800395bce33d161da9e9",
-      "https://app.notion.com/p/348ab062993080bc91d5cc266f3ff500"
-    ]
-  },
-  {
-    "name": "CollegeVine Implementation",
-    "status": "Incoming",
-    "start": "2026-04-20",
-    "end": "2026-05-11",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Recruiting/ Enrollment"
-    ],
-    "project_description": "Implementing CollegeVine for the customer’s Recruiting/Enrollment team, including configuration and rollout planning, to support admissions workflows and readiness for launch from Apr–May 2026.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Moravian SPSI - Cyber Program Shutdown – Revenue Recovery Model",
-    "status": "Done",
-    "start": "2026-04-21",
-    "end": "2026-04-21",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/154f7f650db64a65b25ce540ec9a5266"
-    ]
-  },
-  {
-    "name": "MBA-Aligned Certificate - Recommendation",
-    "status": "Starting",
-    "start": "2026-04-29",
-    "end": "2026-05-08",
-    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
-    "departments": [
-      "Marketing"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://app.notion.com/p/351ab0629930808194a2ece92b60e2d6",
-      "https://app.notion.com/p/351ab062993080868d02c2e9995f51d4"
-    ]
-  },
-  {
     "name": "Financial Aid Tech",
     "status": "Not Scoped",
     "start": "",
@@ -742,10 +37,10 @@
     "project_description": "Partnering with Moravian SPSI to integrate LTV and CAC modeling into the financial framework, enabling program-level profitability analysis, investment prioritization, and clearer accountability across Marketing and Enrollment teams.",
     "description": "",
     "deliverables": [
-      "https://app.notion.com/p/29eab0629930805e801fe0e712c91d81",
-      "https://app.notion.com/p/29fab0629930802699f1fb752a4c6a94",
-      "https://app.notion.com/p/29fab06299308017aeece6574b2d2acc",
-      "https://app.notion.com/p/29fab0629930805a8fffd107be3316dc"
+      "https://www.notion.so/29eab0629930805e801fe0e712c91d81",
+      "https://www.notion.so/29fab0629930802699f1fb752a4c6a94",
+      "https://www.notion.so/29fab06299308017aeece6574b2d2acc",
+      "https://www.notion.so/29fab0629930805a8fffd107be3316dc"
     ]
   },
   {
@@ -812,5 +107,710 @@
     "project_description": "Supporting SPSI with a Technology effort to define and implement an approach to track app completion, clarifying requirements and data needs to enable reliable completion reporting.",
     "description": "",
     "deliverables": []
+  },
+  {
+    "name": "Moravian - SPSI - Audit & Strategic Recommendations",
+    "status": "Done",
+    "start": "2025-03-03",
+    "end": "2025-05-15",
+    "owner_id": "user://280d872b-594c-810c-8368-00023c0a1439",
+    "departments": [
+      "Operations",
+      "Technology",
+      "Marketing",
+      "Market Research",
+      "Finance"
+    ],
+    "project_description": "",
+    "description": "The project delivers an audit and strategic recommendations for Moravian SPSI, covering finance, market research, marketing, operations, and technology, and outlines its goals and context.",
+    "deliverables": [
+      "https://www.notion.so/2a1ab062993080bab7ccf2beaa9036db"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - BA Psychology Viability Analysis",
+    "status": "Done",
+    "start": "2025-09-30",
+    "end": "2025-12-01",
+    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
+    "departments": [
+      "Market Research"
+    ],
+    "project_description": "",
+    "description": "Moravian’s BA Well‑Being Psychology project, conducted by the Market Research department, has been completed, with Micah Arnold as owner and Lee Bradshaw consulted.",
+    "deliverables": [
+      "https://www.notion.so/293ab062993081539902f1c0cf8d6d6d",
+      "https://www.notion.so/293ab06299308117a102c79e005ed709",
+      "https://www.notion.so/293ab062993081bcaa0ac7e44882d966"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - SLT  Weekly Management",
+    "status": "Ongoing",
+    "start": "2025-10-01",
+    "end": "2028-07-01",
+    "owner_id": "user://280d872b-594c-810c-8368-00023c0a1439",
+    "departments": [
+      "Operations",
+      "Finance",
+      "Marketing",
+      "Technology"
+    ],
+    "project_description": "Supporting Moravian’s SPSI/SLT team by setting up a weekly account management and meeting hub to track workstreams, align financial projections and KPIs, and document discovery and updates from Oct 2025–Jul 2028.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2ccab062993080c7a311d47a72503f4a"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Structured EAB Evaluation",
+    "status": "Done",
+    "start": "2025-10-01",
+    "end": "2026-02-26",
+    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2b1ab06299308066acc9dcba920db5a0",
+      "https://www.notion.so/294ab0629930802ebdc2e01b904c6c62",
+      "https://www.notion.so/2b1ab06299308083b020ffce51a097d9",
+      "https://www.notion.so/2b1ab062993080bea721de915fa19782",
+      "https://www.notion.so/2b1ab062993080bcb96bd9d5871956bc",
+      "https://www.notion.so/2b1ab06299308040a986fb71a7b5dcfb"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Team Org Support - Sr. Advisory",
+    "status": "Done",
+    "start": "2025-10-15",
+    "end": "2025-12-01",
+    "owner_id": "space_permission_group-abbf66b9-40d1-4c0c-9e0d-507046d5d911",
+    "departments": [
+      "Operations"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2a6ab06299308021a606df8e0d98843d"
+    ]
+  },
+  {
+    "name": "Moravian - Aviation Programs- Finance Validation & Planning",
+    "status": "Done",
+    "start": "2025-11-01",
+    "end": "2026-04-21",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/68daf4b6dfda478da19ff19ca7ee5db0",
+      "https://www.notion.so/eeaa9eb84cca4ec297999acffc334b80",
+      "https://www.notion.so/82d046a3c8ed4d529653df509b830eee"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - GTM Strategy - Tranche 1 (SPSI, BBA, MBA, Psychology) ",
+    "status": "Done",
+    "start": "2025-11-01",
+    "end": "2026-02-27",
+    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2a3ab06299308067b76fd32d5c46b0d4",
+      "https://www.notion.so/2a3ab062993080d5a36fe4312e0fc1ed",
+      "https://www.notion.so/2a3ab0629930803cb96cdbee3e42ccb2",
+      "https://www.notion.so/2a3ab062993080a68b55c905191144e2",
+      "https://www.notion.so/2a3ab0629930804983aec08088ae3c95",
+      "https://www.notion.so/2a3ab06299308017aef5df570bbc1078",
+      "https://www.notion.so/2a3ab06299308095a3b0f99efa37be1d",
+      "https://www.notion.so/2a3ab0629930806db023cd9b2260a564",
+      "https://www.notion.so/2a3ab06299308049b46af7717638b2cc"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - MS Cyber Market Research (Dec ‘25)",
+    "status": "Done",
+    "start": "2025-11-01",
+    "end": "2025-12-08",
+    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
+    "departments": [
+      "Market Research"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2bfab0629930809899d9f3dc81908f8d"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Marketing Leadership",
+    "status": "Ongoing",
+    "start": "2025-11-01",
+    "end": "2026-06-30",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [
+      "Marketing",
+      "Operations"
+    ],
+    "project_description": "Supporting Moravian’s adult and graduate enrollment marketing leadership by strengthening governance and vendor accountability, delivering a performance management framework, cross-functional workflows, a funnel dashboard, and an operational playbook from Nov 2025–Jun 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2a3ab062993080fa8696e2ec1b0cd978",
+      "https://www.notion.so/2a3ab062993080c29343ea49337098d7",
+      "https://www.notion.so/2a3ab06299308050aa70e16a1e8c4412"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Student Journey Optimization",
+    "status": "In Progress",
+    "start": "2025-11-01",
+    "end": "2026-02-21",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2a3ab062993080e78a79c16f0387ecbe"
+    ]
+  },
+  {
+    "name": "Enrollment Funnel Performance Dashboard v1",
+    "status": "Done",
+    "start": "2025-11-03",
+    "end": "2026-02-26",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2a8ab062993080ac97f0c9c3999afaf8",
+      "https://www.notion.so/2a8ab0629930805aa0aad652c6337e0f",
+      "https://www.notion.so/2a8ab06299308070abe4fb91511bc85f",
+      "https://www.notion.so/2a8ab062993080c8ad97daa3fcba8b75",
+      "https://www.notion.so/ae81676c507e4c178242cffe129241fb"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Finance Validation & Planning",
+    "status": "Done",
+    "start": "2025-11-03",
+    "end": "2025-12-29",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/29eab0629930808ea7dadcc968572f80",
+      "https://www.notion.so/29eab0629930804abeccf3f7b038e966",
+      "https://www.notion.so/29eab062993080d9a1b6e8c8b88bd372",
+      "https://www.notion.so/29eab06299308057b574d4851e3f1dcd",
+      "https://www.notion.so/29eab0629930804fb054f352b652c0df",
+      "https://www.notion.so/68daf4b6dfda478da19ff19ca7ee5db0",
+      "https://www.notion.so/eeaa9eb84cca4ec297999acffc334b80",
+      "https://www.notion.so/82d046a3c8ed4d529653df509b830eee"
+    ]
+  },
+  {
+    "name": "Moravian - Grad & SPSI - Enrollment Leadership",
+    "status": "Ongoing",
+    "start": "2025-12-01",
+    "end": "2026-12-31",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Recruiting/ Enrollment"
+    ],
+    "project_description": "Partnering with Moravian to strengthen graduate and SPSI enrollment leadership, aligning recruiting and enrollment priorities and delivering a clear leadership and operating plan, running from Dec 2025 through Dec 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/34aab0629930808d9e2fd3fb3e25fa3b",
+      "https://www.notion.so/34aab062993080fb9779d1f9d16012e6",
+      "https://www.notion.so/34aab062993080ce98bddc5d6e4f5c25",
+      "https://www.notion.so/34aab06299308049b31be92174d08bee",
+      "https://www.notion.so/34bab06299308009b95ec6826f1de160",
+      "https://www.notion.so/34bab0629930807ebc5ad2ee7d8dd6e3",
+      "https://www.notion.so/34bab0629930804995d8d86b6475820f",
+      "https://www.notion.so/34bab062993080e5a697ca86e96aa811",
+      "https://www.notion.so/34bab062993080a78544d964f89f31a7",
+      "https://www.notion.so/34bab062993080f58ca7d51778270abe",
+      "https://www.notion.so/34bab0629930801dbc8fcfe62c6ee2b2",
+      "https://www.notion.so/34bab0629930804888aad8a1fb6c5534",
+      "https://www.notion.so/34bab0629930805f896ad6e2a6689829",
+      "https://www.notion.so/34bab062993080d29635dde714449118",
+      "https://www.notion.so/34bab0629930800c9df2edc8cc7e9e4e",
+      "https://www.notion.so/34bab062993080388a76d7af5ea68e6c",
+      "https://www.notion.so/34bab062993080669354e8e7bf63e087",
+      "https://www.notion.so/34bab0629930808d97eff54219afa1cd"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - January - M&A - Board Presentation",
+    "status": "Done",
+    "start": "2025-12-15",
+    "end": "2025-12-23",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Executive"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Moravian - SPSI - Rebuild the Financial Model as a Living Tool",
+    "status": "Done",
+    "start": "2026-01-01",
+    "end": "2026-04-30",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2afab062993080489243c4705be7e728",
+      "https://www.notion.so/2afab0629930800b8191d520b99157d8",
+      "https://www.notion.so/2afab062993080d5b9d1e4feb4acfe77",
+      "https://www.notion.so/2afab062993080859d40d104a18c4e3d",
+      "https://www.notion.so/2afab0629930803588a7ffb5546dd9a2",
+      "https://www.notion.so/2afab06299308066a020ce7233ee2381"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - SP26 Enrollment Miss Mitigation Plan",
+    "status": "Ongoing",
+    "start": "2026-01-28",
+    "end": "2026-08-31",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Recruiting/ Enrollment"
+    ],
+    "project_description": "Partnering with Moravian to develop an SP26 enrollment miss mitigation plan and supporting analysis, delivering a clear mitigation roadmap and recommendations running from Jan–Aug 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2fdab062993080e786efc486fb92aace"
+    ]
+  },
+  {
+    "name": "Vetting AI Recruitment Enhancement Providers",
+    "status": "Done",
+    "start": "2026-01-30",
+    "end": "2026-03-06",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Executive",
+      "Recruiting/ Enrollment",
+      "Advising"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2fdab0629930800bbe76ce327917e8a3",
+      "https://www.notion.so/2fdab062993080d2b30ad5f15bca6332",
+      "https://www.notion.so/2fdab062993080b6b524d4ee83a18d59"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Creative & Communications Optimization",
+    "status": "Scoped - Not Started",
+    "start": "2026-02-01",
+    "end": "2026-05-31",
+    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "Supporting Moravian with creative and communications optimization for adult undergraduate and graduate programs, refining collateral and multi-channel campaigns to clarify value proposition and improve funnel messaging from Feb–May 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2a3ab0629930801d8c7bc57bbc2e5f35",
+      "https://www.notion.so/2a3ab062993080efb578e188e9c7c52a",
+      "https://www.notion.so/2a3ab062993080c59ed1f51c953beb84"
+    ]
+  },
+  {
+    "name": "Automate Admit notification and admittee response for SPSI",
+    "status": "Done",
+    "start": "2026-02-09",
+    "end": "2026-02-27",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Moravian - SPSI - March/April M&A - Board Presentation",
+    "status": "Done",
+    "start": "2026-02-12",
+    "end": "2026-03-17",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Executive"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/30cab062993080b9b61ac551cbf2aebb",
+      "https://www.notion.so/30cab0629930803eba26d097059bd1a0"
+    ]
+  },
+  {
+    "name": "Moravian - Hotel (Executive Briefing Memo)",
+    "status": "Done",
+    "start": "2026-03-02",
+    "end": "2026-03-30",
+    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
+    "departments": [
+      "Market Research"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/330ab0629930801ea52ccec6ac83dc0c"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Program(s) Course Audit",
+    "status": "In Progress",
+    "start": "2026-03-02",
+    "end": "2026-05-15",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Advising",
+      "Learning"
+    ],
+    "project_description": "Partnering with Moravian to audit program courses and recommend improvements, providing an independent review and actionable recommendations for academic quality starting March 2026.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Support the adoption of the spark app for all SPSI applicants",
+    "status": "Done",
+    "start": "2026-03-02",
+    "end": "2026-04-10",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Build Inquiry forms for paid landing pages",
+    "status": "Done",
+    "start": "2026-03-09",
+    "end": "2026-03-20",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Automate non-SPSI Grad admit notification and admittee response",
+    "status": "Paused",
+    "start": "2026-03-16",
+    "end": "2026-04-30",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Partnering with Moravian to automate non-SPSI graduate admit notifications and admittee responses, streamlining communications and workflow for the Technology team from Mar–Apr 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/f584ce7e82984d289b4eb66ef426dc7a",
+      "https://www.notion.so/65053ea6ebb24fe29f7b42823e56ab6e"
+    ]
+  },
+  {
+    "name": "Implement Groove SPSI email drip campaigns",
+    "status": "Live / Monitoring",
+    "start": "2026-03-16",
+    "end": "2026-04-24",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Integrate Academic Advising in Salesforce",
+    "status": "Discovery",
+    "start": "2026-03-16",
+    "end": "2026-06-01",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Integrating academic advising workflows into Salesforce by assessing current processes and defining a recommended approach, with requirements and implementation planning running from Mar–Apr 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/d0a9d9729db74987ba0e53a2421bccb4",
+      "https://www.notion.so/86c8dfe484e34f9898fca8e596eb7108"
+    ]
+  },
+  {
+    "name": "Moravian - Blue Ocean Program Opportunity Research (2026)",
+    "status": "Midway",
+    "start": "2026-03-16",
+    "end": "2026-06-06",
+    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
+    "departments": [
+      "Market Research"
+    ],
+    "project_description": "Supporting Moravian University (Mar–Jun 2026) with blue-ocean market research and competitive analysis to identify and prioritize 2–3 new program opportunities, with recommendations and sequencing guidance for future development.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/7610b2a3da3242e29b34eeaab6708794",
+      "https://www.notion.so/52c1edfc459a4ae0b83289993a2c9c4f",
+      "https://www.notion.so/c1d008587dc8455d80edbac78ad25100",
+      "https://www.notion.so/ce8fba20c49e4085977026adc00a6a4e",
+      "https://www.notion.so/e2b2f47bc8254f6abc9c558e849780cf"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Salesforce SEM List Views",
+    "status": "Done",
+    "start": "2026-03-16",
+    "end": "2026-03-25",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Recruiting/ Enrollment"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/34bab062993080d29635dde714449118"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - GTM Strategy - Tranche 2 (Aviation Programs)",
+    "status": "In Progress",
+    "start": "2026-03-19",
+    "end": "2026-05-29",
+    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "Partnering with Moravian University to develop and execute a program-specific go-to-market strategy for SPSI Tranche 1 programs (Cyber, Aviation, and CG AA), from Mar–May 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2c6ab0629930804ca6cbdd906832e66a",
+      "https://www.notion.so/2c6ab06299308017a45ac06ff38160ab",
+      "https://www.notion.so/2c6ab0629930800697bce557f115271a",
+      "https://www.notion.so/2c6ab0629930808d92c9f93ff525c90d",
+      "https://www.notion.so/2c6ab062993080bcab6ad64eca6a6943",
+      "https://www.notion.so/2c6ab062993080c0afabe21a712a8108"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - Cybersecurity Program Viability Assessment - Sprint",
+    "status": "Done",
+    "start": "2026-03-23",
+    "end": "2026-04-14",
+    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
+    "departments": [
+      "Market Research"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/330ab062993080e0884eebd3145f1121"
+    ]
+  },
+  {
+    "name": "Build simpler inquiry forms for organic program pages",
+    "status": "Done",
+    "start": "2026-03-25",
+    "end": "2026-03-30",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/334ab062993080ec99f6e6360f33c22b"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - 30 Credit MBA Pivot - Recommendation",
+    "status": "Done",
+    "start": "2026-04-01",
+    "end": "2026-04-06",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Finance",
+      "Marketing",
+      "Executive",
+      "Advising",
+      "Market Research"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/33aab062993080609cb0c36079890e75",
+      "https://www.notion.so/33aab0629930807da2d7eb6c9fb65108"
+    ]
+  },
+  {
+    "name": "Moravian 21C Admissions Structure Analysis",
+    "status": "Ongoing",
+    "start": "2026-04-01",
+    "end": "2026-04-08",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Recruiting/ Enrollment",
+      "Technology",
+      "Executive"
+    ],
+    "project_description": "Supporting Moravian University with a 21C admissions operations structure analysis, providing enrollment and technology feedback and recommendations in a revised admissions operations document, running Apr 1–8, 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/33cab062993080738705d0bcbd0c2011"
+    ]
+  },
+  {
+    "name": "Form a POV: B2B @ Moravian",
+    "status": "In Progress",
+    "start": "2026-04-02",
+    "end": "2026-06-01",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Advising"
+    ],
+    "project_description": "Supporting Moravian’s exploration of a B2B corporate cohort strategy, aligning internal stakeholders and developing a recommended approach and plan for engaging the university beginning April 2026.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Enable upsert of Archer Social leads",
+    "status": "Live / Monitoring",
+    "start": "2026-04-13",
+    "end": "2026-04-24",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Enable deposit payment for SPSI enrollment",
+    "status": "Not Scoped",
+    "start": "2026-04-15",
+    "end": "2026-05-15",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Implement deposit payment capability for SPSI enrollment, defining Salesforce field mechanics and automation needs and delivering an implementation plan and rollout support from Apr–May 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/348ab0629930802d9feac8db0306bb58",
+      "https://www.notion.so/348ab0629930801ea757ee389ffa0057",
+      "https://www.notion.so/348ab06299308003915eee0a2a5b2fd6"
+    ]
+  },
+  {
+    "name": "v2 SPSI Enrollment Funnel Performance Dashboard",
+    "status": "In Progress",
+    "start": "2026-04-17",
+    "end": "2026-04-29",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology",
+      "Analytics"
+    ],
+    "project_description": "Developing a v2 SPSI enrollment funnel performance dashboard with filterable charts and tables from Salesforce data, covering inquiry-to-deposit stages and source/conversion insights, running Apr 17–29, 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/348ab0629930801f8aa8d245a8bcc894"
+    ]
+  },
+  {
+    "name": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs",
+    "status": "Design",
+    "start": "2026-04-20",
+    "end": "2026-05-20",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Building an integration between SPSI Salesforce and Archer to support Archer SEM workflows and data exchange, delivering the required technical specification and implementation plan, running from Apr–May 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/348ab062993080f3a757ecee8b8729e2",
+      "https://www.notion.so/348ab062993080ef931ced346d3c18f6",
+      "https://www.notion.so/348ab0629930800395bce33d161da9e9",
+      "https://www.notion.so/348ab062993080bc91d5cc266f3ff500"
+    ]
+  },
+  {
+    "name": "CollegeVine Implementation",
+    "status": "Incoming",
+    "start": "2026-04-20",
+    "end": "2026-05-11",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Recruiting/ Enrollment"
+    ],
+    "project_description": "Implementing CollegeVine for the customer’s Recruiting/Enrollment team, including configuration and rollout planning, to support admissions workflows and readiness for launch from Apr–May 2026.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Moravian SPSI - Cyber Program Shutdown – Revenue Recovery Model",
+    "status": "Done",
+    "start": "2026-04-21",
+    "end": "2026-04-21",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/154f7f650db64a65b25ce540ec9a5266"
+    ]
+  },
+  {
+    "name": "MBA-Aligned Certificate - Recommendation",
+    "status": "Starting",
+    "start": "2026-04-29",
+    "end": "2026-05-08",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/351ab0629930808194a2ece92b60e2d6",
+      "https://www.notion.so/351ab062993080868d02c2e9995f51d4"
+    ]
   }
 ]

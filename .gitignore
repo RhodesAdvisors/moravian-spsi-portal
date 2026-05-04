@@ -9,6 +9,9 @@ git-askpass.sh
 # Daily archive copies — useful local history, but no need in the repo
 archive/
 
+# Previous-day snapshots used by diff_log.py (regenerated each run)
+*.previous
+
 # Python bytecode
 __pycache__/
 *.pyc

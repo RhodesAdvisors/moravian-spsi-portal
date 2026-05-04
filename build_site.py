@@ -38,6 +38,10 @@ def url_to_id(u: str) -> str:
     m = re.search(r"/p/([a-f0-9-]+)", u)
     if m:
         return m.group(1).replace("-", "")
+    # Fallback: any 32-hex run anywhere in the URL (notion.so/HEX format)
+    m = re.search(r"([a-f0-9]{32})", u)
+    if m:
+        return m.group(1)
     return ""
 
 
