@@ -19,7 +19,7 @@
     "status": "Delivered/Completed",
     "start": "2025-09-30",
     "end": "2025-10-13",
-    "characteristics": "Provide an overview of the project's goals and context"
+    "characteristics": ""
   },
   "293ab062993081539902f1c0cf8d6d6d": {
     "title": "Moravian - BA Psychology Viability - Research Report",
@@ -41,7 +41,7 @@
     "status": "Delivered/Completed",
     "start": "2025-09-30",
     "end": "2025-10-20",
-    "characteristics": "Provide an overview of the project's goals and context"
+    "characteristics": ""
   },
   "294ab0629930802ebdc2e01b904c6c62": {
     "title": "Moravian - Initial Memo (EAB)",
@@ -52,7 +52,7 @@
     "status": "Delivered/Completed",
     "start": "2025-10-21",
     "end": "2025-11-04",
-    "characteristics": "Provide an overview of the project's goals and context"
+    "characteristics": ""
   },
   "29eab0629930804abeccf3f7b038e966": {
     "title": "Moravian - Finance Validation - Input Validation",
@@ -155,8 +155,6 @@
   },
   "2a1ab062993080bab7ccf2beaa9036db": {
     "title": "Moravian - Analysis & Strategy Final Delivery",
-    "characteristics": "-",
-    "status": "Delivered/Completed",
     "owner_id": "user://280d872b-594c-810c-8368-00023c0a1439",
     "departments": [
       "Strategy",
@@ -165,20 +163,22 @@
       "Operations",
       "Finance"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-03-10",
-    "end": "2025-05-15"
+    "end": "2025-05-15",
+    "characteristics": ""
   },
   "2a3ab06299308017aef5df570bbc1078": {
     "title": "Moravian - M1: Input Validation & Market Alignment",
-    "characteristics": "",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing",
       "Finance"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-04",
-    "end": "2025-11-29"
+    "end": "2025-11-29",
+    "characteristics": ""
   },
   "2a3ab0629930801d8c7bc57bbc2e5f35": {
     "title": "Moravian - M3: Continuous Improvement & Reporting",
@@ -193,36 +193,36 @@
   },
   "2a3ab0629930803cb96cdbee3e42ccb2": {
     "title": "Moravian - M4: Creative Strategy & Media Plan",
-    "characteristics": "",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2026-03-16",
-    "end": "2026-04-17"
+    "end": "2026-04-17",
+    "characteristics": ""
   },
   "2a3ab0629930804983aec08088ae3c95": {
     "title": "Moravian - M6: Full Launch & Optimization Readiness",
-    "characteristics": "Fully activate top-of-funnel campaigns across all paid and organic channels. Begin weekly performance reviews of lead volume, quality, and cost metrics. Feed early campaign data into KPI dashboard for live monitoring. Prepare optimization brief for next phase (conversion-stage creative and communications).",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2026-04-06",
-    "end": "2026-04-30"
+    "end": "2026-04-30",
+    "characteristics": "Fully activate top-of-funnel campaigns across all paid and organic channels. Begin weekly performance reviews of lead volume, quality, and cost metrics. Feed early campaign data into KPI dashboard for live monitoring. Prepare optimization brief for next phase (conversion-stage creative and communications)."
   },
   "2a3ab06299308049b46af7717638b2cc": {
     "title": "Moravian - M4: Program Launch & Campaign Development",
-    "characteristics": "",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2026-03-16",
-    "end": "2026-04-03"
+    "end": "2026-04-03",
+    "characteristics": ""
   },
   "2a3ab06299308050aa70e16a1e8c4412": {
     "title": "New project",
@@ -236,45 +236,50 @@
     "end": "2026-06-30"
   },
   "2a3ab06299308067b76fd32d5c46b0d4": {
-    "title": "(deleted)",
-    "characteristics": "",
-    "status": "",
-    "owner_id": "",
-    "departments": [],
-    "start": "",
-    "end": ""
+    "title": "Moravian - M2: Program Discovery Synthesis Report",
+    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "departments": [
+      "Marketing"
+    ],
+    "status": "Delivered/Completed",
+    "start": "2025-11-11",
+    "end": "2026-02-02",
+    "characteristics": ""
   },
   "2a3ab0629930806db023cd9b2260a564": {
-    "title": "(deleted)",
-    "characteristics": "",
-    "status": "",
-    "owner_id": "",
-    "departments": [],
-    "start": "",
-    "end": ""
-  },
-  "2a3ab06299308095a3b0f99efa37be1d": {
-    "title": "Moravian - M2: Model Refinement & Scenario Development",
-    "characteristics": "",
-    "status": "Delivered/Completed",
+    "title": "Moravian - M3: KPI Definition & Reporting Framework",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing",
       "Finance"
     ],
+    "status": "Delivered/Completed",
+    "start": "2025-12-30",
+    "end": "2026-01-10",
+    "characteristics": ""
+  },
+  "2a3ab06299308095a3b0f99efa37be1d": {
+    "title": "Moravian - M2: Model Refinement & Scenario Development",
+    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "departments": [
+      "Marketing",
+      "Finance"
+    ],
+    "status": "Delivered/Completed",
     "start": "2025-12-02",
-    "end": "2025-12-27"
+    "end": "2025-12-27",
+    "characteristics": ""
   },
   "2a3ab062993080a68b55c905191144e2": {
     "title": "Moravian - M5: Campaign Prep & Early Activation",
-    "characteristics": "Meta ads (Instagram & Facebook) creative for all programs. Landing page designs (high-fidelity). Email sequence assets (HTML and hi-fi designs for 7 emails). Website copy for SPSI, MBA, BBA, and Psych. High-fidelity lead form mock up.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-12-23",
-    "end": "2026-02-27"
+    "end": "2026-02-27",
+    "characteristics": ""
   },
   "2a3ab062993080c29343ea49337098d7": {
     "title": "Moravian - M2: Enrollment Operations & Funnel Management",
@@ -301,15 +306,15 @@
     "end": "2026-04-03"
   },
   "2a3ab062993080d5a36fe4312e0fc1ed": {
-    "title": "Moravian - M3: Messaging Framework & GTM Foundation",
-    "characteristics": "Develop SPSI brand narrative and messaging hierarchy across school and program levels. Identify shared themes (ROI, flexibility, industry relevance) and program-specific differentiators. Begin creative brief and campaign architecture outlining key audiences and tone of voice. Align early messaging with comm flow structure (awareness to inquiry).",
-    "status": "Delivered/Completed",
+    "title": "Moravian - M3: Messaging Framework & GTM Foundation (Strategy Document and Executive Presentation)",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-25",
-    "end": "2026-02-06"
+    "end": "2026-02-06",
+    "characteristics": ""
   },
   "2a3ab062993080e78a79c16f0387ecbe": {
     "title": "Moravian - M1: Student Journey Mapping & Optimization",
@@ -348,14 +353,14 @@
   },
   "2a6ab06299308021a606df8e0d98843d": {
     "title": "Moravian - New JD_AVP of Graduate & Adult Enrollment",
-    "characteristics": "New JD created and finalized for AVP of Graduate & Adult Enrollment role.",
-    "status": "Delivered/Completed",
     "owner_id": "",
     "departments": [
       "Advising"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-10-13",
-    "end": "2025-10-31"
+    "end": "2025-10-31",
+    "characteristics": ""
   },
   "2a8ab0629930805aa0aad652c6337e0f": {
     "title": "Moravian - M2: Standardize taxonomy and tagging",
@@ -469,69 +474,69 @@
   },
   "2b1ab06299308040a986fb71a7b5dcfb": {
     "title": "Moravian - Executive Rec Memo (EAB) (1)",
-    "characteristics": "Email Lee sent to SLT (Bryon, Dee, Scott). Full assessment of EAB in relation to SPSI's marketing and enrollment operations completed. Checkpoint model outlined giving Moravian structure, pace, and accountability needed to keep close eye on EAB's alignment. Will work alongside marketing, enrollment, and SPSI leads to stand up checkpoints.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-10-21",
-    "end": "2025-11-18"
+    "end": "2025-11-18",
+    "characteristics": ""
   },
   "2b1ab06299308066acc9dcba920db5a0": {
     "title": "Moravian - Checkpoint 1 - Due 11/30/25",
-    "characteristics": "By Nov 30, EAB must agree to the FY24-25 SPSI budget projections, volume projections, and cost-per-student model that Rhodes Advisors and SPSI leadership are finalizing. This will serve as the financial baseline for measuring performance and pacing. All SPSI programs fully reactivated across paid and organic journeys. Initial improvements to attribution and source tracking.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-19",
-    "end": "2025-12-23"
+    "end": "2025-12-23",
+    "characteristics": "By Nov 30, EAB must agree to the FY24–25 SPSI budget projections, volume projections, and cost-per-student model that Rhodes Advisors and SPSI leadership are finalizing. This will serve as the financial baseline for measuring performance and pacing.<br>• All SPSI programs fully reactivated across paid and organic journeys.<br>• Initial improvements to attribution and source tracking."
   },
   "2b1ab06299308083b020ffce51a097d9": {
     "title": "Moravian - Checkpoint 2 - Due 1/28/26",
-    "characteristics": "Full implementation of Rhodes Advisors-provided creative, landing pages, and messaging. CRM workflows updated to match SPSI's journey mapping. Tracking alignment across EAB and the secondary vendor to enable February funnel clarity.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-19",
-    "end": "2026-01-28"
+    "end": "2026-01-28",
+    "characteristics": "Full implementation of Rhodes Advisors-provided creative, landing pages, and messaging. CRM workflows updated to match SPSI's journey mapping. Tracking alignment across EAB and the secondary vendor to enable February funnel clarity."
   },
   "2b1ab062993080bcb96bd9d5871956bc": {
     "title": "Moravian - Post February Oversight - Ongoing",
-    "characteristics": "Weekly Performance Reviews: Rhodes Advisors and Moravian jointly review SPSI performance every week, with focus on lead volume, CPL, conversion quality, and pacing toward Fall 2025 goals. Financial Stewardship: All performance evaluations measured against SPSI budget and EAB-agreed projections. Pipeline Health Monitoring: SPSI must demonstrate consistent inquiry growth, improved lead quality, and stable funnel movement. Fail-Safe Protocol: If progress stalls, Moravian will escalate toward transition planning. Clear Ownership Model: SPSI's oversight of EAB centralized; Justine Bartholomew + Rhodes Advisors jointly own coordination.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-19",
-    "end": "2026-12-31"
+    "end": "2026-12-31",
+    "characteristics": "Weekly Performance Reviews: Rhodes Advisors and Moravian will jointly review SPSI performance every week, with a focus on lead volume, CPL, conversion quality, and pacing toward Fall 2025 goals. Financial Stewardship: All performance evaluations will be measured against the SPSI budget, volume projections, and cost-per-student model that EAB has agreed to and be shared with Moravian leadership. Pipeline Health Monitoring: SPSI must demonstrate consistent inquiry growth, improved lead quality, and stable movement through the funnel. Fail-Safe Protocol: If weekly progress stalls—or vendor coordination breaks down—Moravian will escalate toward transition planning. Vendor contracts for alternative solutions will be drafted in parallel to avoid delays. Clear Ownership Model: SPSI's oversight of EAB will be centralized. We recommend that Justine Bartholomew (institutional lead) and Rhodes Advisors (strategic/performance lead) jointly own EAB coordination, KPI management, and integration across enrollment, brand, and program teams."
   },
   "2b1ab062993080bea721de915fa19782": {
     "title": "Moravian - Checkpoint 3 - Due 2/26/26",
-    "characteristics": "Clear progress in lead volume, CPL, and early conversion quality. Positive pacing toward Fall 2025 enrollment targets. Weekly program-level funnel reporting begins. February becomes the first unified view of lead/application/student performance. If progress insufficient, Moravian begins drafting vendor transition contracts for September 1 takeover.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
     "departments": [
       "Marketing"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-19",
-    "end": "2026-02-26"
+    "end": "2026-02-26",
+    "characteristics": "Clear progress in lead volume, CPL, and early conversion quality. Positive pacing toward Fall 2025 enrollment targets. Weekly program-level funnel reporting begins. February becomes the first unified view of lead → application → student performance. If progress is insufficient, Moravian begins drafting vendor transition contracts for a September 1 takeover or earlier if necessary."
   },
   "2bfab0629930809899d9f3dc81908f8d": {
     "title": "Moravian - MS Cybersecurity - Market Analysis Report",
-    "characteristics": "Assessment of the labor market for Moravian's MS Cyber program: should they focus in NYC or Eastern PA?. Recommendation: Focus on Eastern PA.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
     "departments": [
       "Market Research"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-01",
-    "end": "2025-12-03"
+    "end": "2025-12-03",
+    "characteristics": "Assessment of the labor market for Moravian's MS Cyber program: should they focus in NYC or Eastern PA?. Recommendation: Focus on Eastern PA."
   },
   "2c6ab0629930800697bce557f115271a": {
     "title": "Moravian - M3: Messaging Framework & GTM Foundation",
@@ -601,14 +606,14 @@
   },
   "2ccab062993080c7a311d47a72503f4a": {
     "title": "Moravian - SPSI - SLT Weekly Meetings",
-    "characteristics": "Weekly SLT meetings with SPSI team. Meeting agenda, notes, and delivered artifacts tracked.",
-    "status": "Ongoing",
     "owner_id": "user://280d872b-594c-810c-8368-00023c0a1439",
     "departments": [
       "Operations"
     ],
+    "status": "Ongoing",
     "start": "2025-10-01",
-    "end": "2028-12-31"
+    "end": "2028-12-31",
+    "characteristics": ""
   },
   "2fdab0629930800bbe76ce327917e8a3": {
     "title": "Develop and Deliver a Recommendation",
@@ -1060,14 +1065,14 @@
   },
   "68daf4b6dfda478da19ff19ca7ee5db0": {
     "title": "Moravian - Finance Validation v1.1 (Aviation) - Input Validation",
-    "characteristics": "Updated CAC & conversion data tables. Revised enrollment targets. Validated tuition and retention inputs. Align with go-to-market strategy to validate each program's assumptions. Audit and validate tuition, discounting, and retention assumptions. Recalculate CAC by program and channel using paid-only data. Validate funnel conversion rates by program/industry. Collaborate with Marketing to integrate spend data and update revenue projections.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
     "departments": [
       "Finance"
     ],
+    "status": "Delivered/Completed",
     "start": "2025-11-01",
-    "end": "2026-04-21"
+    "end": "2026-04-21",
+    "characteristics": "Updated CAC & conversion data tables. Revised enrollment targets. Validated tuition and retention inputs."
   },
   "7610b2a3da3242e29b34eeaab6708794": {
     "title": "Moravian - Blue Ocean - Kickoff & Leadership Discovery",
@@ -1082,14 +1087,14 @@
   },
   "82d046a3c8ed4d529653df509b830eee": {
     "title": "Moravian - Finance Validation v1.1 (Aviation) - Review, Test, Refine",
-    "characteristics": "Final validated financial model. Scenario summary and recommendations. Brief training session and model documentation. Review model with Rhodes and Moravian's leadership team. Conduct scenario testing (conversion, spend, and persistence). Refine model logic and documentation. Train internal users on structure and assumptions.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
     "departments": [
       "Finance"
     ],
+    "status": "Delivered/Completed",
     "start": "2026-04-15",
-    "end": "2026-04-27"
+    "end": "2026-04-27",
+    "characteristics": "Final validated financial model. Scenario summary and recommendations. Brief training session and model documentation."
   },
   "86c8dfe484e34f9898fca8e596eb7108": {
     "title": "Moravian - SPSI Advising in Salesforce - Workflow Assessment & Requirements",
@@ -1162,14 +1167,14 @@
   },
   "eeaa9eb84cca4ec297999acffc334b80": {
     "title": "Moravian - Finance Validation v1.1 (Aviation) - Develop ROI Model",
-    "characteristics": "Reconstructed financial model (Excel/Sheets). ROI summary by program & channel. Baseline forecast and staffing cost integration. Incorporate validated inputs into a reconstructed financial model. Rebuild ROI calculations per program and channel. Include automation/tech costs and staffing cost assumptions. Create version-controlled baseline forecast for current programs. Draft ROI analysis framework for new program launches.",
-    "status": "Delivered/Completed",
     "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
     "departments": [
       "Finance"
     ],
+    "status": "Delivered/Completed",
     "start": "2026-04-12",
-    "end": "2026-04-15"
+    "end": "2026-04-15",
+    "characteristics": "Reconstructed financial model (Excel/Sheets). ROI summary by program & channel. Baseline forecast and staffing cost integration."
   },
   "f584ce7e82984d289b4eb66ef426dc7a": {
     "title": "Moravian - Non-SPSI Grad Admit Automation - Assessment & Design",

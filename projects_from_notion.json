@@ -1,114 +1,5 @@
 [
   {
-    "name": "Financial Aid Tech",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Streamlining and scaling financial aid packaging and communications technology to improve accuracy and turnaround time, supporting a more consistent student experience and stronger enrollment conversion.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Moravian - SPSI - August - M&A - Board Presentation",
-    "status": "Incoming",
-    "start": "",
-    "end": "2026-08-07",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Executive"
-    ],
-    "project_description": "Partnering with Moravian to deliver an M&A board presentation for SPSI leadership, aligning executive stakeholders and key messages through August 2026.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Moravian - SPSI - LTV:CAC Modeling",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "Partnering with Moravian SPSI to integrate LTV and CAC modeling into the financial framework, enabling program-level profitability analysis, investment prioritization, and clearer accountability across Marketing and Enrollment teams.",
-    "description": "",
-    "deliverables": [
-      "https://www.notion.so/29eab0629930805e801fe0e712c91d81",
-      "https://www.notion.so/29fab0629930802699f1fb752a4c6a94",
-      "https://www.notion.so/29fab06299308017aeece6574b2d2acc",
-      "https://www.notion.so/29fab0629930805a8fffd107be3316dc"
-    ]
-  },
-  {
-    "name": "Moravian - SPSI - October - M&A - Board Presentation",
-    "status": "Scoped - Not Started",
-    "start": "",
-    "end": "",
-    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
-    "departments": [
-      "Executive"
-    ],
-    "project_description": "Partnering with Moravian’s executive team to develop an M&A board presentation for the SPSI engagement, clarifying key messages and supporting materials for an October board meeting.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Moravian- SPSI- Financial Modeling (Hotel/Hospitality)",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "Supporting Moravian/SPSI with program-level hospitality acquisition financial modeling, delivering best-, most-likely-, and worst-case scenario P&Ls and decision-ready outputs to inform a May board decision.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Populate Data Warehouse for Marketing and Enrollment Dashboards",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Develop a data warehouse to power marketing and enrollment dashboards, defining reporting requirements and an ingestion plan for prioritized datasets to support the Technology team’s analytics and decision-making.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Salesforce lead cultivation reporting for SEMs",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Develop Salesforce lead-cultivation reporting for SEMs by defining requirements and building Technology-focused dashboards and metrics that enable consistent tracking, segmentation, and stakeholder reporting.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Track app completion",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Supporting SPSI with a Technology effort to define and implement an approach to track app completion, clarifying requirements and data needs to enable reliable completion reporting.",
-    "description": "",
-    "deliverables": []
-  },
-  {
     "name": "Moravian - SPSI - Audit & Strategic Recommendations",
     "status": "Done",
     "start": "2025-03-03",
@@ -187,7 +78,7 @@
     "status": "Done",
     "start": "2025-10-15",
     "end": "2025-12-01",
-    "owner_id": "space_permission_group-abbf66b9-40d1-4c0c-9e0d-507046d5d911",
+    "owner_id": "",
     "departments": [
       "Operations"
     ],
@@ -422,7 +313,10 @@
     "deliverables": [
       "https://www.notion.so/2fdab0629930800bbe76ce327917e8a3",
       "https://www.notion.so/2fdab062993080d2b30ad5f15bca6332",
-      "https://www.notion.so/2fdab062993080b6b524d4ee83a18d59"
+      "https://www.notion.so/2fdab062993080b6b524d4ee83a18d59",
+      "https://www.notion.so/357ab062993080d4b449ef40109061f2",
+      "https://www.notion.so/357ab06299308055b019ceedbbe38f94",
+      "https://www.notion.so/bdde2ac2f18c498ab0aefca171ece1b4"
     ]
   },
   {
@@ -453,7 +347,10 @@
     ],
     "project_description": "",
     "description": "",
-    "deliverables": []
+    "deliverables": [
+      "https://www.notion.so/356ab06299308019a1acc206e836e6aa",
+      "https://www.notion.so/356ab06299308094b79ac42a1c91f49d"
+    ]
   },
   {
     "name": "Moravian - SPSI - March/April M&A - Board Presentation",
@@ -488,9 +385,9 @@
   },
   {
     "name": "Moravian - SPSI - Program(s) Course Audit",
-    "status": "In Progress",
+    "status": "Done",
     "start": "2026-03-02",
-    "end": "2026-05-15",
+    "end": "2026-05-01",
     "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
     "departments": [
       "Advising",
@@ -812,5 +709,127 @@
       "https://www.notion.so/351ab0629930808194a2ece92b60e2d6",
       "https://www.notion.so/351ab062993080868d02c2e9995f51d4"
     ]
+  },
+  {
+    "name": "CollegeVine technical implementation",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Placeholder for now. We have not discussed the scope of the initial implementation",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Financial Aid Tech",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Streamlining and scaling financial aid packaging and communications technology to improve accuracy and turnaround time, supporting a more consistent student experience and stronger enrollment conversion.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Moravian - SPSI - August - M&A - Board Presentation",
+    "status": "Incoming",
+    "start": "",
+    "end": "2026-08-07",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Executive"
+    ],
+    "project_description": "Partnering with Moravian to deliver an M&A board presentation for SPSI leadership, aligning executive stakeholders and key messages through August 2026.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Moravian - SPSI - LTV:CAC Modeling",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "Partnering with Moravian SPSI to integrate LTV and CAC modeling into the financial framework, enabling program-level profitability analysis, investment prioritization, and clearer accountability across Marketing and Enrollment teams.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/29eab0629930805e801fe0e712c91d81",
+      "https://www.notion.so/29fab0629930802699f1fb752a4c6a94",
+      "https://www.notion.so/29fab06299308017aeece6574b2d2acc",
+      "https://www.notion.so/29fab0629930805a8fffd107be3316dc"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - October - M&A - Board Presentation",
+    "status": "Scoped - Not Started",
+    "start": "",
+    "end": "",
+    "owner_id": "user://280d872b-594c-816f-a911-000210c9dfda",
+    "departments": [
+      "Executive"
+    ],
+    "project_description": "Partnering with Moravian’s executive team to develop an M&A board presentation for the SPSI engagement, clarifying key messages and supporting materials for an October board meeting.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Moravian- SPSI- Financial Modeling (Hotel/Hospitality)",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "Supporting Moravian/SPSI with program-level hospitality acquisition financial modeling, delivering best-, most-likely-, and worst-case scenario P&Ls and decision-ready outputs to inform a May board decision.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Populate Data Warehouse for Marketing and Enrollment Dashboards",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Develop a data warehouse to power marketing and enrollment dashboards, defining reporting requirements and an ingestion plan for prioritized datasets to support the Technology team’s analytics and decision-making.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Salesforce lead cultivation reporting for SEMs",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Develop Salesforce lead-cultivation reporting for SEMs by defining requirements and building Technology-focused dashboards and metrics that enable consistent tracking, segmentation, and stakeholder reporting.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "Track app completion",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Supporting SPSI with a Technology effort to define and implement an approach to track app completion, clarifying requirements and data needs to enable reliable completion reporting.",
+    "description": "",
+    "deliverables": []
   }
 ]
