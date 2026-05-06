@@ -129,8 +129,8 @@ def build_projects(projects_raw, deliverables, user_map):
 # -----------------------------------------------------------------------------
 PROJECTS_LINE_RE = re.compile(r"^const\s+PROJECTS\s*=\s*\[.*?\];\s*$", re.MULTILINE)
 
-# Bumped to v3 when we added a due-date line under each deliverable.
-DRAWER_PATCH_MARKER = "/* drawer:desc-characteristics-notion-due v3 */"
+# Bumped to v4 when we relocated the timeline legend to the top of the page.
+DRAWER_PATCH_MARKER = "/* drawer:desc-characteristics-notion-due-legend v4 */"
 
 # The Notion logo SVG, inlined so the site has no extra external dependencies.
 NOTION_SVG = (
@@ -146,7 +146,10 @@ NOTION_SVG = (
     '</svg>'
 )
 
-DRAWER_PATCH = """/* drawer:desc-characteristics-notion-due v3 */
+DRAWER_PATCH = """/* drawer:desc-characteristics-notion-due-legend v4 */
+/* Add a bottom margin so the relocated legend has breathing room above the view */
+.legend { margin-bottom: 20px; }
+
 .drawer-project-desc {
   font-style: italic;
   color: var(--ink-mute);
@@ -294,6 +297,40 @@ NEW_TITLE_JS_TAIL = (
     "\n  }"
 )
 
+# -----------------------------------------------------------------------------
+# Patch 6 & 7 — relocate the timeline legend.
+# Originally the legend sits inside <section id="view-timeline"> at the bottom,
+# so it's only visible in Timeline view AND requires scrolling on long pages.
+# Move it to sit between the filter-banner and view-timeline, where it's
+# always visible (any view) and reachable without scrolling.
+# -----------------------------------------------------------------------------
+LEGEND_HTML = (
+    '<div class="legend">\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-done"></span>Done</div>\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-ongoing"></span>Ongoing</div>\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-progress"></span>In Motion</div>\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-paused"></span>Paused</div>\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-planned"></span>Planned · Scoped</div>\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-reopened"></span>Complete · Reopened</div>\n'
+    '    <div class="legend-item"><span class="legend-swatch leg-today"></span>Today</div>\n'
+    '  </div>'
+)
+
+# Match the existing legend block plus the closing </section> right after it,
+# so we cleanly remove the legend from inside view-timeline.
+OLD_LEGEND_INSIDE_TIMELINE_RE = re.compile(
+    r'\n\s*<div class="legend">\s*'
+    r'(?:<div class="legend-item">[^<]*<span class="legend-swatch[^"]*"></span>[^<]+</div>\s*){7}'
+    r'</div>\s*(</section>)'
+)
+
+# Match the closing of filter-banner + the opening of view-timeline so we can
+# slide the legend block in between.
+OLD_BANNER_TIMELINE_GAP_RE = re.compile(
+    r'(<button id="banner-clear" type="button">Clear filter</button>\s*</div>)'
+    r'(\s*<section class="view-section" id="view-timeline">)'
+)
+
 
 def patch_template(html: str) -> str:
     """Idempotently apply all drawer patches to the unpatched template HTML."""
@@ -322,6 +359,20 @@ def patch_template(html: str) -> str:
     if not OLD_TITLE_JS_RE.search(html):
         raise SystemExit("Template missing the openDrawer title assignment line. Aborting.")
     html = OLD_TITLE_JS_RE.sub(lambda m: m.group(1) + NEW_TITLE_JS_TAIL, html, count=1)
+
+    # 6. Remove the legend from inside the timeline section.
+    if not OLD_LEGEND_INSIDE_TIMELINE_RE.search(html):
+        raise SystemExit("Template missing the legend block inside view-timeline. Aborting.")
+    html = OLD_LEGEND_INSIDE_TIMELINE_RE.sub(lambda m: "\n" + m.group(1), html, count=1)
+
+    # 7. Insert the legend between filter-banner and view-timeline.
+    if not OLD_BANNER_TIMELINE_GAP_RE.search(html):
+        raise SystemExit("Template missing the filter-banner / view-timeline gap. Aborting.")
+    html = OLD_BANNER_TIMELINE_GAP_RE.sub(
+        lambda m: m.group(1) + "\n\n  " + LEGEND_HTML + m.group(2),
+        html,
+        count=1,
+    )
 
     return html
 

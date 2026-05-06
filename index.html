@@ -918,7 +918,10 @@
   .hero-title { animation-delay: .12s; }
   .hero-sub { animation-delay: .22s; }
   .stats { animation-delay: .32s; }
-/* drawer:desc-characteristics-notion-due v3 */
+/* drawer:desc-characteristics-notion-due-legend v4 */
+/* Add a bottom margin so the relocated legend has breathing room above the view */
+.legend { margin-bottom: 20px; }
+
 .drawer-project-desc {
   font-style: italic;
   color: var(--ink-mute);
@@ -1080,6 +1083,16 @@
   <button id="banner-clear" type="button">Clear filter</button>
 </div>
 
+  <div class="legend">
+    <div class="legend-item"><span class="legend-swatch leg-done"></span>Done</div>
+    <div class="legend-item"><span class="legend-swatch leg-ongoing"></span>Ongoing</div>
+    <div class="legend-item"><span class="legend-swatch leg-progress"></span>In Motion</div>
+    <div class="legend-item"><span class="legend-swatch leg-paused"></span>Paused</div>
+    <div class="legend-item"><span class="legend-swatch leg-planned"></span>Planned · Scoped</div>
+    <div class="legend-item"><span class="legend-swatch leg-reopened"></span>Complete · Reopened</div>
+    <div class="legend-item"><span class="legend-swatch leg-today"></span>Today</div>
+  </div>
+
 <section class="view-section" id="view-timeline">
   <div class="gantt">
     <div class="gantt-head">
@@ -1091,15 +1104,6 @@
   <div id="timeline-empty" class="empty-state" style="display:none; margin-top:24px;">
     <h3>No projects match these filters</h3>
     <p>Try clearing a filter or adjusting your search.</p>
-  </div>
-  <div class="legend">
-    <div class="legend-item"><span class="legend-swatch leg-done"></span>Done</div>
-    <div class="legend-item"><span class="legend-swatch leg-ongoing"></span>Ongoing</div>
-    <div class="legend-item"><span class="legend-swatch leg-progress"></span>In Motion</div>
-    <div class="legend-item"><span class="legend-swatch leg-paused"></span>Paused</div>
-    <div class="legend-item"><span class="legend-swatch leg-planned"></span>Planned · Scoped</div>
-    <div class="legend-item"><span class="legend-swatch leg-reopened"></span>Complete · Reopened</div>
-    <div class="legend-item"><span class="legend-swatch leg-today"></span>Today</div>
   </div>
 </section>
 
