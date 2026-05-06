@@ -918,9 +918,25 @@
   .hero-title { animation-delay: .12s; }
   .hero-sub { animation-delay: .22s; }
   .stats { animation-delay: .32s; }
-/* drawer:desc-characteristics-notion-due-legend v4 */
-/* Add a bottom margin so the relocated legend has breathing room above the view */
-.legend { margin-bottom: 20px; }
+/* drawer:desc-characteristics-notion-due-legend-sticky v5 */
+/* Sticky-pin the relocated legend to the bottom of the filter bar.
+   --controls-height is set at runtime by a small inline script;
+   the 78px fallback covers the typical desktop case. */
+.legend {
+  position: sticky;
+  top: var(--controls-height, 78px);
+  z-index: 49;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 12px 40px;
+  background: rgba(240, 240, 240, .94);
+  backdrop-filter: blur(8px);
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  margin: 0 0 24px;
+}
 
 .drawer-project-desc {
   font-style: italic;
@@ -1612,5 +1628,7 @@ if (stats.attention === 0) {
 rerender();
 })();
 </script>
+
+<script>(function(){var c=document.querySelector(".controls-wrap");if(!c)return;var s=function(){document.documentElement.style.setProperty("--controls-height",c.offsetHeight+"px");};s();window.addEventListener("resize",s);})();</script>
 </body>
 </html>

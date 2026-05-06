@@ -129,8 +129,8 @@ def build_projects(projects_raw, deliverables, user_map):
 # -----------------------------------------------------------------------------
 PROJECTS_LINE_RE = re.compile(r"^const\s+PROJECTS\s*=\s*\[.*?\];\s*$", re.MULTILINE)
 
-# Bumped to v4 when we relocated the timeline legend to the top of the page.
-DRAWER_PATCH_MARKER = "/* drawer:desc-characteristics-notion-due-legend v4 */"
+# Bumped to v5 when we made the relocated legend sticky to the filter bar.
+DRAWER_PATCH_MARKER = "/* drawer:desc-characteristics-notion-due-legend-sticky v5 */"
 
 # The Notion logo SVG, inlined so the site has no extra external dependencies.
 NOTION_SVG = (
@@ -146,9 +146,25 @@ NOTION_SVG = (
     '</svg>'
 )
 
-DRAWER_PATCH = """/* drawer:desc-characteristics-notion-due-legend v4 */
-/* Add a bottom margin so the relocated legend has breathing room above the view */
-.legend { margin-bottom: 20px; }
+DRAWER_PATCH = """/* drawer:desc-characteristics-notion-due-legend-sticky v5 */
+/* Sticky-pin the relocated legend to the bottom of the filter bar.
+   --controls-height is set at runtime by a small inline script;
+   the 78px fallback covers the typical desktop case. */
+.legend {
+  position: sticky;
+  top: var(--controls-height, 78px);
+  z-index: 49;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 12px 40px;
+  background: rgba(240, 240, 240, .94);
+  backdrop-filter: blur(8px);
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  margin: 0 0 24px;
+}
 
 .drawer-project-desc {
   font-style: italic;
@@ -331,6 +347,19 @@ OLD_BANNER_TIMELINE_GAP_RE = re.compile(
     r'(\s*<section class="view-section" id="view-timeline">)'
 )
 
+# Patch 8 — inject a tiny script that measures the sticky filter bar's height
+# at runtime and exposes it as --controls-height. The legend uses this so it
+# pins flush to the bottom of the filter bar even when controls wrap on mobile.
+STICKY_OFFSET_SCRIPT = (
+    '\n<script>(function(){var c=document.querySelector(".controls-wrap");'
+    'if(!c)return;var s=function(){'
+    'document.documentElement.style.setProperty("--controls-height",c.offsetHeight+"px");};'
+    's();window.addEventListener("resize",s);})();</script>\n'
+)
+# We don't use a regex for the </body> insertion — `rsplit` on the last
+# occurrence is safer than a regex that could match `</body>` inside an
+# unrelated CSS/JS comment or string.
+
 
 def patch_template(html: str) -> str:
     """Idempotently apply all drawer patches to the unpatched template HTML."""
@@ -373,6 +402,14 @@ def patch_template(html: str) -> str:
         html,
         count=1,
     )
+
+    # 8. Inject the sticky-offset measurement script before the real closing
+    # body tag (use rsplit so we never match a stray `</body>` inside a comment).
+    body_tag = "</body>"
+    parts = html.rsplit(body_tag, 1)
+    if len(parts) != 2:
+        raise SystemExit("Template missing </body>. Aborting.")
+    html = parts[0] + STICKY_OFFSET_SCRIPT + body_tag + parts[1]
 
     return html
 
