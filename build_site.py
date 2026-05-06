@@ -45,6 +45,13 @@ def url_to_id(u: str) -> str:
     return ""
 
 
+def notion_url_for_id(did: str) -> str:
+    """Build a public Notion page URL from a 32-hex page ID."""
+    if not did:
+        return ""
+    return f"https://www.notion.so/{did}"
+
+
 def to_mdY(iso: str) -> str:
     """ISO YYYY-MM-DD -> MM/DD/YYYY (matches existing site format). Returns '' for empty input."""
     if not iso:
@@ -74,18 +81,27 @@ def build_projects(projects_raw, deliverables, user_map):
     for p in projects_raw:
         owner_name = name_for(p.get("owner_id", ""), user_map)
 
+        # Project-level Notion URL: prefer the explicit `url` field if the
+        # parsing step captured it; otherwise leave blank (button is hidden).
+        project_url = p.get("url") or p.get("notion_url") or ""
+
         deliv_records = []
         for url in p.get("deliverables", []):
             did = url_to_id(url)
             d = deliverables.get(did)
+            deliv_url = notion_url_for_id(did) if did else ""
             if not d:
                 # Page exists in projects' deliverable list but isn't in cache.
-                # Show the URL stub as title so the project still renders.
-                deliv_records.append({"title": "(deliverable not cached)", "characteristics": ""})
+                deliv_records.append({
+                    "title": "(deliverable not cached)",
+                    "characteristics": "",
+                    "notion_url": deliv_url,
+                })
                 continue
             deliv_records.append({
                 "title": d.get("title") or "",
                 "characteristics": d.get("characteristics") or "",
+                "notion_url": deliv_url,
             })
 
         out.append({
@@ -96,6 +112,7 @@ def build_projects(projects_raw, deliverables, user_map):
             "owner": owner_name,
             "departments": sorted(p.get("departments", [])),
             "project_description": p.get("project_description", ""),
+            "notion_url": project_url,
             "deliverables": deliv_records,
         })
     return out
@@ -104,15 +121,27 @@ def build_projects(projects_raw, deliverables, user_map):
 # -----------------------------------------------------------------------------
 # Template handling
 # -----------------------------------------------------------------------------
-# Single-line, non-greedy: the PROJECTS = [...] declaration sits on one line in the template.
-# Using DOTALL+greedy here would eat the rest of the JS (drawer code, etc.) up to the LAST `];`.
 PROJECTS_LINE_RE = re.compile(r"^const\s+PROJECTS\s*=\s*\[.*?\];\s*$", re.MULTILINE)
 
-# Patches the openDrawer function to render Project Description (above the meta grid)
-# and a small italic Characteristics paragraph beneath each deliverable title.
-DRAWER_PATCH_MARKER = "/* drawer:project-desc-and-characteristics-patch v1 */"
+# Bumped to v2 when we added Notion link buttons. Older _template.html files
+# without this marker will be re-patched from scratch.
+DRAWER_PATCH_MARKER = "/* drawer:project-desc-characteristics-notion-buttons v2 */"
 
-DRAWER_PATCH = """/* drawer:project-desc-and-characteristics-patch v1 */
+# The Notion logo SVG, inlined so the site has no extra external dependencies.
+NOTION_SVG = (
+    '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" '
+    'xmlns="http://www.w3.org/2000/svg">'
+    '<path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326'
+    'L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904'
+    'c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887'
+    'l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264'
+    'c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84'
+    'l-3.222.186c-.093-.186 0-.653.327-.746l.84-.234V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073'
+    'l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933z"/>'
+    '</svg>'
+)
+
+DRAWER_PATCH = """/* drawer:project-desc-characteristics-notion-buttons v2 */
 .drawer-project-desc {
   font-style: italic;
   color: var(--ink-mute);
@@ -130,14 +159,69 @@ DRAWER_PATCH = """/* drawer:project-desc-and-characteristics-patch v1 */
   color: var(--ink-mute);
   line-height: 1.5;
 }
+
+/* Notion link buttons — quiet by default, hover for emphasis */
+.drawer-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.drawer-title-row h2 { flex: 1; min-width: 0; }
+.notion-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.18);
+  color: #ffffff;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background .15s ease;
+}
+.notion-link-btn:hover { background: rgba(255,255,255,0.32); color: #ffffff; }
+.notion-link-btn svg { width: 13px; height: 13px; display: block; }
+.deliv-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.deliv-title-row > span:first-child { flex: 1; min-width: 0; }
+.deliv-notion-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  background: var(--light-grey);
+  color: var(--dark-grey);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background .15s ease, color .15s ease;
+}
+.deliv-notion-btn:hover { background: var(--rule-strong); color: var(--ink); }
+.deliv-notion-btn svg { width: 11px; height: 11px; display: block; }
 """
 
+# -----------------------------------------------------------------------------
+# Patch 1 — the deliverable render block inside openDrawer().
+# Replaces the original (no characteristics, no notion button) with a version
+# that includes both.
+# -----------------------------------------------------------------------------
 NEW_DELIV_RENDER = (
     "  const delivHTML = p.deliverables.length\n"
     "    ? `<ul class=\"deliv-list\">${p.deliverables.map(d => `\n"
     "        <li class=\"deliv-item\">\n"
     "          <span class=\"bullet\"></span>\n"
-    "          <span class=\"text\">${escHTML(d.title)}${d.characteristics ? `<span class=\"deliv-characteristics\">${escHTML(d.characteristics)}</span>` : ''}</span>\n"
+    "          <span class=\"text\">\n"
+    "            <span class=\"deliv-title-row\">\n"
+    "              <span>${escHTML(d.title)}</span>\n"
+    "              ${d.notion_url ? `<a class=\"deliv-notion-btn\" href=\"${d.notion_url}\" target=\"_blank\" rel=\"noopener\" title=\"Open in Notion\" aria-label=\"Open in Notion\">" + NOTION_SVG + "</a>` : ''}\n"
+    "            </span>\n"
+    "            ${d.characteristics ? `<span class=\"deliv-characteristics\">${escHTML(d.characteristics)}</span>` : ''}\n"
+    "          </span>\n"
     "        </li>`).join('')}</ul>`\n"
     "    : `<div class=\"no-delivs\">No deliverables tracked for this project.</div>`;"
 )
@@ -152,12 +236,13 @@ OLD_DELIV_RENDER_RE = re.compile(
     r"    : `<div class=\"no-delivs\">No deliverables tracked for this project\.</div>`;"
 )
 
-# We add the Project Description block right at the top of drawer-body innerHTML.
-# Insert just after `document.getElementById('drawer-body').innerHTML = ` `\n` and before `<div class="drawer-meta-grid">`
+# -----------------------------------------------------------------------------
+# Patch 2 — inject Project Description above the meta grid (drawer-body innerHTML).
+# -----------------------------------------------------------------------------
 OLD_DRAWER_HEAD_RE = re.compile(
     r"(document\.getElementById\('drawer-body'\)\.innerHTML\s*=\s*`\s*\n\s*)<div class=\"drawer-meta-grid\">"
 )
-# Use a callable replacement so we don't have to escape `\1`/quotes inside a raw string.
+
 def _new_drawer_head(match):
     return (
         match.group(1)
@@ -165,26 +250,62 @@ def _new_drawer_head(match):
         + '    <div class="drawer-meta-grid">'
     )
 
+# -----------------------------------------------------------------------------
+# Patch 3 — wrap the static drawer-title h2 in a flex row so the Notion button
+# can sit beside it. Also adds the link element itself.
+# -----------------------------------------------------------------------------
+OLD_TITLE_HTML_RE = re.compile(r'<h2 id="drawer-title">—</h2>')
+NEW_TITLE_HTML = (
+    '<div class="drawer-title-row">'
+    '<h2 id="drawer-title">—</h2>'
+    f'<a id="drawer-notion-link" class="notion-link-btn" target="_blank" rel="noopener" title="Open in Notion" aria-label="Open in Notion" style="display:none;">{NOTION_SVG}</a>'
+    '</div>'
+)
+
+# -----------------------------------------------------------------------------
+# Patch 4 — when openDrawer fires, sync the project's Notion URL onto the
+# header link element. Insert right after the existing line that sets the
+# drawer title text.
+# -----------------------------------------------------------------------------
+OLD_TITLE_JS_RE = re.compile(
+    r"(document\.getElementById\('drawer-title'\)\.textContent\s*=\s*p\.display;)"
+)
+NEW_TITLE_JS_TAIL = (
+    "\n  const __notionLink = document.getElementById('drawer-notion-link');"
+    "\n  if (__notionLink) {"
+    "\n    if (p.notion_url) { __notionLink.href = p.notion_url; __notionLink.style.display = ''; }"
+    "\n    else { __notionLink.style.display = 'none'; }"
+    "\n  }"
+)
+
 
 def patch_template(html: str) -> str:
-    """Idempotently apply the drawer patch to the template HTML."""
+    """Idempotently apply all drawer patches to the unpatched template HTML."""
     if DRAWER_PATCH_MARKER in html:
         return html  # already patched
 
-    # Inject CSS just before the closing </style> tag
+    # 1. Inject CSS just before the closing </style> tag.
     html = re.sub(r"(</style>)", DRAWER_PATCH + r"\1", html, count=1)
 
-    # Replace the deliverable render block
+    # 2. Replace the deliverable render block.
     if not OLD_DELIV_RENDER_RE.search(html):
-        raise SystemExit("Template missing the expected deliverable render block. "
-                         "Either the template was already modified by hand or the source "
-                         "site changed shape. Aborting.")
+        raise SystemExit("Template missing the expected deliverable render block. Aborting.")
     html = OLD_DELIV_RENDER_RE.sub(NEW_DELIV_RENDER, html, count=1)
 
-    # Inject Project Description above the meta grid
+    # 3. Inject Project Description above the meta grid.
     if not OLD_DRAWER_HEAD_RE.search(html):
         raise SystemExit("Template missing the drawer head opener. Aborting.")
     html = OLD_DRAWER_HEAD_RE.sub(_new_drawer_head, html, count=1)
+
+    # 4. Wrap the drawer-title h2 with a flex row + add the Notion link element.
+    if not OLD_TITLE_HTML_RE.search(html):
+        raise SystemExit('Template missing the static `<h2 id="drawer-title">` element. Aborting.')
+    html = OLD_TITLE_HTML_RE.sub(NEW_TITLE_HTML, html, count=1)
+
+    # 5. Hook openDrawer's title-set line so it also updates the Notion link.
+    if not OLD_TITLE_JS_RE.search(html):
+        raise SystemExit("Template missing the openDrawer title assignment line. Aborting.")
+    html = OLD_TITLE_JS_RE.sub(lambda m: m.group(1) + NEW_TITLE_JS_TAIL, html, count=1)
 
     return html
 
@@ -198,11 +319,7 @@ def replace_projects_block(html: str, projects) -> str:
 
 
 def stamp_refresh_date(html: str) -> str:
-    """Update the hardcoded TODAY date constant so 'Last refreshed' shows today.
-
-    The original site has: `const TODAY = new Date(2026, 3, 28);`
-    We replace it with today's date.
-    """
+    """Update the hardcoded TODAY date constant so 'Last refreshed' shows today."""
     today = datetime.now()
     new_today = f"const TODAY = new Date({today.year}, {today.month - 1}, {today.day});"
     return re.sub(r"const\s+TODAY\s*=\s*new\s+Date\([^)]+\);", new_today, html, count=1)
@@ -210,7 +327,6 @@ def stamp_refresh_date(html: str) -> str:
 
 def main():
     if not os.path.exists(TEMPLATE_FILE):
-        # First-time bootstrap: copy the current index.html to _template.html as the canonical template.
         if not os.path.exists(OUT_FILE):
             sys.exit(f"No template found at {TEMPLATE_FILE} and no existing index.html to bootstrap from.")
         with open(OUT_FILE) as f:
@@ -240,9 +356,11 @@ def main():
 
     deliv_count = sum(len(p["deliverables"]) for p in projects)
     char_count = sum(1 for p in projects for d in p["deliverables"] if d["characteristics"])
+    proj_with_url = sum(1 for p in projects if p["notion_url"])
+    deliv_with_url = sum(1 for p in projects for d in p["deliverables"] if d["notion_url"])
     print(f"Wrote {OUT_FILE}")
-    print(f"  Projects: {len(projects)}")
-    print(f"  Deliverables: {deliv_count}")
+    print(f"  Projects: {len(projects)} ({proj_with_url} with Notion URL)")
+    print(f"  Deliverables: {deliv_count} ({deliv_with_url} with Notion URL)")
     print(f"  Deliverables with Characteristics text: {char_count}")
     print(f"  Refreshed: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
 

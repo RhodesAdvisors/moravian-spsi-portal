@@ -55,6 +55,25 @@ def fmt_date(s):
     return s if s else "(no date)"
 
 
+def normalize_title(s):
+    """Collapse whitespace and lowercase — used to detect 'changes' that are
+    just whitespace/case canonicalization noise from Notion API responses."""
+    if not s:
+        return ""
+    return re.sub(r"\s+", " ", s).strip().lower()
+
+
+def is_meaningful_string_change(old, new):
+    """True if old vs new differ beyond whitespace/case."""
+    return normalize_title(old) != normalize_title(new)
+
+
+def is_suspect_deleted(val):
+    """'(deleted)' titles in our cache mean the page returned blank/empty during a
+    fetch — usually a transient API cross-response, not a real Notion deletion."""
+    return (val or "").strip().lower() == "(deleted)"
+
+
 def main():
     old_projects = load("projects_from_notion.json.previous", [])
     new_projects = load("projects_from_notion.json", [])
@@ -83,7 +102,7 @@ def main():
 
         changes = []
 
-        if op.get("status") != np.get("status"):
+        if is_meaningful_string_change(op.get("status"), np.get("status")):
             changes.append(("status", op.get("status") or "(empty)", np.get("status") or "(empty)"))
 
         if op.get("start") != np.get("start"):
@@ -92,7 +111,13 @@ def main():
             changes.append(("end date", fmt_date(op.get("end")), fmt_date(np.get("end"))))
 
         if op.get("owner_id") != np.get("owner_id"):
-            changes.append(("owner", name_for(op.get("owner_id")), name_for(np.get("owner_id"))))
+            # Skip the spurious "Team -> (no owner)" flip — that's a default-state
+            # difference in how Notion serializes unset owners, not a real change.
+            old_owner = name_for(op.get("owner_id"))
+            new_owner = name_for(np.get("owner_id"))
+            if not ((old_owner == "Team" and new_owner == "(no owner)") or
+                    (old_owner == "(no owner)" and new_owner == "Team")):
+                changes.append(("owner", old_owner, new_owner))
 
         if set(op.get("departments", [])) != set(np.get("departments", [])):
             changes.append((
@@ -132,10 +157,17 @@ def main():
         od = old_delivs.get(did)
         if not od:
             continue  # already counted as new via project link
+
+        # Skip cross-response artifacts: if either side is "(deleted)", the page
+        # almost certainly returned blank in one fetch but was fine in the other.
+        # That's API noise, not a real Notion change.
+        if is_suspect_deleted(od.get("title")) or is_suspect_deleted(nd.get("title")):
+            continue
+
         changes = []
-        if od.get("title") != nd.get("title"):
+        if is_meaningful_string_change(od.get("title"), nd.get("title")):
             changes.append(("title", od.get("title") or "(empty)", nd.get("title") or "(empty)"))
-        if od.get("status") != nd.get("status"):
+        if is_meaningful_string_change(od.get("status"), nd.get("status")):
             changes.append(("status", od.get("status") or "(empty)", nd.get("status") or "(empty)"))
         if od.get("start") != nd.get("start"):
             changes.append(("start date", fmt_date(od.get("start")), fmt_date(nd.get("start"))))
