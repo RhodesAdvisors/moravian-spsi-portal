@@ -19,12 +19,14 @@ __pycache__/
 # macOS
 .DS_Store
 
-# Temp scratch files
+# Temp scratch files — anything starting with "_" is treated as scratch
+# (the canonical _template.html is the one exception)
+_*
+!_template.html
+
+# Cowork auto-saved local backups
+*.local_modified.*
+
+# Stragglers from previous runs
 test_write.txt
-_test_write*.txt
-_bash_create_test.txt
-_deliverable_responses.jsonl
 deliverables_new.json
-_all_deliverable_urls.json
-_new_deliverables.json
-_remaining_urls.txt

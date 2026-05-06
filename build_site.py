@@ -96,12 +96,18 @@ def build_projects(projects_raw, deliverables, user_map):
                     "title": "(deliverable not cached)",
                     "characteristics": "",
                     "notion_url": deliv_url,
+                    "start": "",
+                    "end": "",
+                    "status": "",
                 })
                 continue
             deliv_records.append({
                 "title": d.get("title") or "",
                 "characteristics": d.get("characteristics") or "",
                 "notion_url": deliv_url,
+                "start": to_mdY(d.get("start", "")),
+                "end": to_mdY(d.get("end", "")),
+                "status": d.get("status") or "",
             })
 
         out.append({
@@ -123,9 +129,8 @@ def build_projects(projects_raw, deliverables, user_map):
 # -----------------------------------------------------------------------------
 PROJECTS_LINE_RE = re.compile(r"^const\s+PROJECTS\s*=\s*\[.*?\];\s*$", re.MULTILINE)
 
-# Bumped to v2 when we added Notion link buttons. Older _template.html files
-# without this marker will be re-patched from scratch.
-DRAWER_PATCH_MARKER = "/* drawer:project-desc-characteristics-notion-buttons v2 */"
+# Bumped to v3 when we added a due-date line under each deliverable.
+DRAWER_PATCH_MARKER = "/* drawer:desc-characteristics-notion-due v3 */"
 
 # The Notion logo SVG, inlined so the site has no extra external dependencies.
 NOTION_SVG = (
@@ -141,7 +146,7 @@ NOTION_SVG = (
     '</svg>'
 )
 
-DRAWER_PATCH = """/* drawer:project-desc-characteristics-notion-buttons v2 */
+DRAWER_PATCH = """/* drawer:desc-characteristics-notion-due v3 */
 .drawer-project-desc {
   font-style: italic;
   color: var(--ink-mute);
@@ -203,6 +208,16 @@ DRAWER_PATCH = """/* drawer:project-desc-characteristics-notion-buttons v2 */
 }
 .deliv-notion-btn:hover { background: var(--rule-strong); color: var(--ink); }
 .deliv-notion-btn svg { width: 11px; height: 11px; display: block; }
+
+/* Deliverable due-date line — small monospace below the title row */
+.deliv-due {
+  display: block;
+  margin-top: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+}
 """
 
 # -----------------------------------------------------------------------------
@@ -220,6 +235,7 @@ NEW_DELIV_RENDER = (
     "              <span>${escHTML(d.title)}</span>\n"
     "              ${d.notion_url ? `<a class=\"deliv-notion-btn\" href=\"${d.notion_url}\" target=\"_blank\" rel=\"noopener\" title=\"Open in Notion\" aria-label=\"Open in Notion\">" + NOTION_SVG + "</a>` : ''}\n"
     "            </span>\n"
+    "            ${d.end ? `<span class=\"deliv-due\">Due ${escHTML(d.end)}</span>` : (d.start ? `<span class=\"deliv-due\">Started ${escHTML(d.start)}</span>` : '')}\n"
     "            ${d.characteristics ? `<span class=\"deliv-characteristics\">${escHTML(d.characteristics)}</span>` : ''}\n"
     "          </span>\n"
     "        </li>`).join('')}</ul>`\n"
