@@ -103,6 +103,21 @@
     "deliverables": []
   },
   {
+    "name": "SPSI - Monthly Insights Review",
+    "url": "https://www.notion.so/359ab06299308024b72accf3f0464122",
+    "status": "Ongoing",
+    "start": "",
+    "end": "",
+    "owner_id": null,
+    "departments": [
+      "Marketing",
+      "Technology"
+    ],
+    "project_description": "A monthly standing meeting between Rhodes Advisors and Moravian's marketing and technology team to review website and enrollment marketing performance data, share insights from the analytics dashboard, and align on prioritized recommendations for the month ahead.",
+    "description": "",
+    "deliverables": []
+  },
+  {
     "name": "Salesforce lead cultivation reporting for SEMs",
     "url": "https://www.notion.so/30aab062993080bba3f0ff37c96e3c75",
     "status": "Not Scoped",
@@ -473,7 +488,7 @@
     "status": "Scoped - Not Started",
     "start": "2026-02-01",
     "end": "2026-05-31",
-    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
     "departments": [
       "Marketing"
     ],
@@ -668,7 +683,7 @@
     "status": "In Progress",
     "start": "2026-03-19",
     "end": "2026-05-29",
-    "owner_id": "user://2b1d872b-594c-8104-9839-0002081d081f",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
     "departments": [
       "Marketing"
     ],
@@ -869,7 +884,7 @@
   {
     "name": "MBA-Aligned Certificate - Recommendation",
     "url": "https://www.notion.so/351ab062993080eb8e1cdbadcc508292",
-    "status": "Starting",
+    "status": "Midway",
     "start": "2026-04-29",
     "end": "2026-05-08",
     "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
