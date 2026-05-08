@@ -757,7 +757,7 @@
     "url": "https://www.notion.so/7a0ad2c01d05458f8b41bd26bbafde9e",
     "status": "In Progress",
     "start": "2026-04-30",
-    "end": "2026-05-08",
+    "end": "2026-05-15",
     "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
     "departments": [
       "Finance"
@@ -769,6 +769,18 @@
       "https://www.notion.so/b19898c303a645a4a26fe3981d0d6073",
       "https://www.notion.so/1ba6f1e8d1fb479fb9381152da5fb6fd"
     ]
+  },
+  {
+    "name": "",
+    "url": "https://www.notion.so/359ab062993080f7af67cc0554fb1be2",
+    "status": "Scoped - Not Started",
+    "start": "",
+    "end": "",
+    "owner_id": "",
+    "departments": [],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
   },
   {
     "name": "CollegeVine technical implementation",
@@ -799,7 +811,7 @@
     "deliverables": []
   },
   {
-    "name": "Moravian - SPSI - August - M&A - Board Presentation",
+    "name": "Moravian - SPSI - August 2026 - M&A - Board Presentation",
     "url": "https://www.notion.so/2ceab062993080f388c7cc451594a777",
     "status": "Incoming",
     "start": "",
@@ -810,7 +822,9 @@
     ],
     "project_description": "Partnering with Moravian to deliver an M&A board presentation for SPSI leadership, aligning executive stakeholders and key messages through August 2026.",
     "description": "",
-    "deliverables": []
+    "deliverables": [
+      "https://www.notion.so/35aab0629930808f89dfda08fae8040d"
+    ]
   },
   {
     "name": "Moravian - SPSI - LTV:CAC Modeling",
@@ -832,7 +846,7 @@
     ]
   },
   {
-    "name": "Moravian - SPSI - October - M&A - Board Presentation",
+    "name": "Moravian - SPSI - October 2026 - M&A - Board Presentation",
     "url": "https://www.notion.so/2ceab062993080bc9035ce6d53a4f0fb",
     "status": "Scoped - Not Started",
     "start": "",
