@@ -136,22 +136,6 @@
     ]
   },
   {
-    "name": "Moravian - SPSI - MS Cyber Market Research (Dec ‘25)",
-    "url": "https://www.notion.so/2bfab0629930800b9a8ad9b1e2e30496",
-    "status": "Done",
-    "start": "2025-11-01",
-    "end": "2025-12-08",
-    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
-    "departments": [
-      "Market Research"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://www.notion.so/2bfab0629930809899d9f3dc81908f8d"
-    ]
-  },
-  {
     "name": "Moravian - SPSI - Marketing Leadership",
     "url": "https://www.notion.so/2c6ab062993080a19600caf798ae3713",
     "status": "Ongoing",
@@ -168,6 +152,22 @@
       "https://www.notion.so/2a3ab062993080fa8696e2ec1b0cd978",
       "https://www.notion.so/2a3ab062993080c29343ea49337098d7",
       "https://www.notion.so/2a3ab06299308050aa70e16a1e8c4412"
+    ]
+  },
+  {
+    "name": "Moravian - SPSI - MS Cyber Market Research (Dec ‘25)",
+    "url": "https://www.notion.so/2bfab0629930800b9a8ad9b1e2e30496",
+    "status": "Done",
+    "start": "2025-11-01",
+    "end": "2025-12-08",
+    "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
+    "departments": [
+      "Market Research"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/2bfab0629930809899d9f3dc81908f8d"
     ]
   },
   {
@@ -481,7 +481,7 @@
   {
     "name": "Integrate Academic Advising in Salesforce",
     "url": "https://www.notion.so/30aab06299308023bfadf279bd6c852e",
-    "status": "Discovery",
+    "status": "In Progress",
     "start": "2026-03-16",
     "end": "2026-06-01",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
@@ -652,24 +652,6 @@
     "deliverables": []
   },
   {
-    "name": "Enable deposit payment for SPSI enrollment",
-    "url": "https://www.notion.so/30aab062993080f1b880cfdb32da5c2c",
-    "status": "Not Scoped",
-    "start": "2026-04-15",
-    "end": "2026-05-15",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Implement deposit payment capability for SPSI enrollment, defining Salesforce field mechanics and automation needs and delivering an implementation plan and rollout support from Apr–May 2026.",
-    "description": "",
-    "deliverables": [
-      "https://www.notion.so/348ab0629930802d9feac8db0306bb58",
-      "https://www.notion.so/348ab0629930801ea757ee389ffa0057",
-      "https://www.notion.so/348ab06299308003915eee0a2a5b2fd6"
-    ]
-  },
-  {
     "name": "v2 SPSI Enrollment Funnel Performance Dashboard",
     "url": "https://www.notion.so/348ab062993080838217de14fab9ac4c",
     "status": "Live / Monitoring",
@@ -689,7 +671,7 @@
   {
     "name": "Build SPSI Integration SF ↔ Archer integration needed to support Archer SEMs",
     "url": "https://www.notion.so/33cab06299308000828df565c5abfb9a",
-    "status": "Design",
+    "status": "In Progress",
     "start": "2026-04-20",
     "end": "2026-05-20",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
@@ -738,7 +720,7 @@
   {
     "name": "MBA-Aligned Certificate - Recommendation",
     "url": "https://www.notion.so/351ab062993080eb8e1cdbadcc508292",
-    "status": "Midway",
+    "status": "Done",
     "start": "2026-04-29",
     "end": "2026-05-08",
     "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
@@ -795,6 +777,24 @@
     "project_description": "Placeholder for now. We have not discussed the scope of the initial implementation",
     "description": "",
     "deliverables": []
+  },
+  {
+    "name": "Enable deposit payment for SPSI enrollment",
+    "url": "https://www.notion.so/30aab062993080f1b880cfdb32da5c2c",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Implement deposit payment capability for SPSI enrollment, defining Salesforce field mechanics and automation needs and delivering an implementation plan and rollout support from Apr–May 2026.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/348ab0629930802d9feac8db0306bb58",
+      "https://www.notion.so/348ab0629930801ea757ee389ffa0057",
+      "https://www.notion.so/348ab06299308003915eee0a2a5b2fd6"
+    ]
   },
   {
     "name": "Financial Aid Tech",
@@ -888,6 +888,20 @@
     "deliverables": []
   },
   {
+    "name": "Salesforce lead cultivation reporting for SEMs",
+    "url": "https://www.notion.so/30aab062993080bba3f0ff37c96e3c75",
+    "status": "Not Scoped",
+    "start": "",
+    "end": "",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "Develop Salesforce lead-cultivation reporting for SEMs by defining requirements and building Technology-focused dashboards and metrics that enable consistent tracking, segmentation, and stakeholder reporting.",
+    "description": "",
+    "deliverables": []
+  },
+  {
     "name": "SPSI - Monthly Insights Review",
     "url": "https://www.notion.so/359ab06299308024b72accf3f0464122",
     "status": "Ongoing",
@@ -899,20 +913,6 @@
       "Technology"
     ],
     "project_description": "A monthly standing meeting between Rhodes Advisors and Moravian's marketing and technology team to review website and enrollment marketing performance data, share insights from the analytics dashboard, and align on prioritized recommendations for the month ahead.",
-    "description": "",
-    "deliverables": []
-  },
-  {
-    "name": "Salesforce lead cultivation reporting for SEMs",
-    "url": "https://www.notion.so/30aab062993080bba3f0ff37c96e3c75",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Develop Salesforce lead-cultivation reporting for SEMs by defining requirements and building Technology-focused dashboards and metrics that enable consistent tracking, segmentation, and stakeholder reporting.",
     "description": "",
     "deliverables": []
   },
