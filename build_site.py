@@ -415,11 +415,17 @@ def patch_template(html: str) -> str:
 
 
 def replace_projects_block(html: str, projects) -> str:
-    """Swap in the new const PROJECTS = [...]; line."""
+    """Swap in the new const PROJECTS = [...]; line.
+
+    IMPORTANT: pass `new_line` via a callable, not a string, so re.sub doesn't
+    interpret `\\n` / `\\t` etc. in the JSON payload as control characters.
+    A string replacement would convert json.dumps's `\\n` (two chars) into a
+    literal LF, producing invalid JS and breaking the site.
+    """
     new_line = "const PROJECTS = " + json.dumps(projects, ensure_ascii=False) + ";"
     if not PROJECTS_LINE_RE.search(html):
         raise SystemExit("Could not find `const PROJECTS = [...]` in template. Aborting.")
-    return PROJECTS_LINE_RE.sub(new_line, html, count=1)
+    return PROJECTS_LINE_RE.sub(lambda m: new_line, html, count=1)
 
 
 def stamp_refresh_date(html: str) -> str:
