@@ -30,3 +30,6 @@ _*
 # Stragglers from previous runs
 test_write.txt
 deliverables_new.json
+
+# Scratch directory for daily refresh helpers
+.work/
