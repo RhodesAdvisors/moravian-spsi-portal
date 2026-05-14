@@ -918,7 +918,39 @@
   .hero-title { animation-delay: .12s; }
   .hero-sub { animation-delay: .22s; }
   .stats { animation-delay: .32s; }
-/* drawer:desc-characteristics-notion-due-legend-sticky v5 */
+/* drawer:desc-chars-notion-due-legend-sticky-hero-cta v6 */
+/* Weekly report CTA buttons in the hero, just below the subtitle */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1.5px solid var(--m-blue);
+  color: var(--m-blue);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background .15s ease, color .15s ease;
+}
+.hero-cta:hover {
+  background: var(--m-blue);
+  color: #ffffff;
+}
+.hero-cta svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
 /* Sticky-pin the relocated legend to the bottom of the filter bar.
    --controls-height is set at runtime by a small inline script;
    the 78px fallback covers the typical desktop case. */
@@ -1033,6 +1065,17 @@
   <div class="hero-eyebrow">SPSI Project Portfolio · Engagement with Rhodes Advisors</div>
   <h1 class="hero-title">Every project. Every owner. <strong>One source of truth.</strong></h1>
   <p class="hero-sub">A live record of the engagement between Rhodes Advisors and Moravian's School of Professional Studies & Innovation — covering enrollment strategy, market research, financial modeling, marketing operations, and the technology backbone that ties them together. Click any project for owners, deliverables, and detail.</p>
+
+  <div class="hero-actions">
+    <a class="hero-cta" href="https://enrollment-performance-hub.netlify.app/" target="_blank" rel="noopener">
+      <span>Weekly Enrollment Report</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+    <a class="hero-cta" href="https://moravian-spsi-tech-status.vercel.app/" target="_blank" rel="noopener">
+      <span>Weekly Tech Report</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
 
   <div class="stats">
     <div class="stat"><div class="accent-bar"></div><div class="num" id="stat-total">—</div><div class="label">Total Projects</div></div>

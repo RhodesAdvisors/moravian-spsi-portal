@@ -129,8 +129,8 @@ def build_projects(projects_raw, deliverables, user_map):
 # -----------------------------------------------------------------------------
 PROJECTS_LINE_RE = re.compile(r"^const\s+PROJECTS\s*=\s*\[.*?\];\s*$", re.MULTILINE)
 
-# Bumped to v5 when we made the relocated legend sticky to the filter bar.
-DRAWER_PATCH_MARKER = "/* drawer:desc-characteristics-notion-due-legend-sticky v5 */"
+# Bumped to v6 when we added Weekly Enrollment / Tech Report CTA buttons in the hero.
+DRAWER_PATCH_MARKER = "/* drawer:desc-chars-notion-due-legend-sticky-hero-cta v6 */"
 
 # The Notion logo SVG, inlined so the site has no extra external dependencies.
 NOTION_SVG = (
@@ -146,7 +146,39 @@ NOTION_SVG = (
     '</svg>'
 )
 
-DRAWER_PATCH = """/* drawer:desc-characteristics-notion-due-legend-sticky v5 */
+DRAWER_PATCH = """/* drawer:desc-chars-notion-due-legend-sticky-hero-cta v6 */
+/* Weekly report CTA buttons in the hero, just below the subtitle */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1.5px solid var(--m-blue);
+  color: var(--m-blue);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background .15s ease, color .15s ease;
+}
+.hero-cta:hover {
+  background: var(--m-blue);
+  color: #ffffff;
+}
+.hero-cta svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
 /* Sticky-pin the relocated legend to the bottom of the filter bar.
    --controls-height is set at runtime by a small inline script;
    the 78px fallback covers the typical desktop case. */
@@ -347,6 +379,25 @@ OLD_BANNER_TIMELINE_GAP_RE = re.compile(
     r'(\s*<section class="view-section" id="view-timeline">)'
 )
 
+# Patch 9 — inject the Weekly Report CTA row in the hero, between the
+# subtitle paragraph and the stats grid.
+HERO_CTAS_HTML = (
+    '\n\n  <div class="hero-actions">\n'
+    '    <a class="hero-cta" href="https://enrollment-performance-hub.netlify.app/" target="_blank" rel="noopener">\n'
+    '      <span>Weekly Enrollment Report</span>\n'
+    '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M9 7h8v8"/></svg>\n'
+    '    </a>\n'
+    '    <a class="hero-cta" href="https://moravian-spsi-tech-status.vercel.app/" target="_blank" rel="noopener">\n'
+    '      <span>Weekly Tech Report</span>\n'
+    '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M9 7h8v8"/></svg>\n'
+    '    </a>\n'
+    '  </div>'
+)
+OLD_HERO_SUB_TO_STATS_RE = re.compile(
+    r'(<p class="hero-sub">[^<]*</p>)(\s*<div class="stats">)',
+    re.DOTALL,
+)
+
 # Patch 8 — inject a tiny script that measures the sticky filter bar's height
 # at runtime and exposes it as --controls-height. The legend uses this so it
 # pins flush to the bottom of the filter bar even when controls wrap on mobile.
@@ -410,6 +461,15 @@ def patch_template(html: str) -> str:
     if len(parts) != 2:
         raise SystemExit("Template missing </body>. Aborting.")
     html = parts[0] + STICKY_OFFSET_SCRIPT + body_tag + parts[1]
+
+    # 9. Inject the Weekly Report CTA buttons in the hero.
+    if not OLD_HERO_SUB_TO_STATS_RE.search(html):
+        raise SystemExit("Template missing hero-sub → stats anchor. Aborting.")
+    html = OLD_HERO_SUB_TO_STATS_RE.sub(
+        lambda m: m.group(1) + HERO_CTAS_HTML + m.group(2),
+        html,
+        count=1,
+    )
 
     return html
 
