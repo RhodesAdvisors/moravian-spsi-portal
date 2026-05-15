@@ -688,20 +688,6 @@
     ]
   },
   {
-    "name": "CollegeVine Implementation",
-    "url": "https://www.notion.so/32dab06299308039990ee7e8e7e9ce24",
-    "status": "Incoming",
-    "start": "2026-04-20",
-    "end": "2026-05-11",
-    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
-    "departments": [
-      "Recruiting/ Enrollment"
-    ],
-    "project_description": "Implementing CollegeVine for the customer’s Recruiting/Enrollment team, including configuration and rollout planning, to support admissions workflows and readiness for launch from Apr–May 2026.",
-    "description": "",
-    "deliverables": []
-  },
-  {
     "name": "Moravian SPSI - Cyber Program Shutdown – Revenue Recovery Model",
     "url": "https://www.notion.so/349ab0629930807690eeeeccb4785f76",
     "status": "Done",
@@ -735,24 +721,6 @@
     ]
   },
   {
-    "name": "SPSI Program Migration & Consolidated RollupCreated to mirror the standalone project record in Rhodes Advisor Projects.",
-    "url": "https://www.notion.so/7a0ad2c01d05458f8b41bd26bbafde9e",
-    "status": "In Progress",
-    "start": "2026-04-30",
-    "end": "2026-05-15",
-    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
-    "departments": [
-      "Finance"
-    ],
-    "project_description": "",
-    "description": "",
-    "deliverables": [
-      "https://www.notion.so/d1579d1898dc465db3510627c15e81bc",
-      "https://www.notion.so/b19898c303a645a4a26fe3981d0d6073",
-      "https://www.notion.so/1ba6f1e8d1fb479fb9381152da5fb6fd"
-    ]
-  },
-  {
     "name": "Transcript Upload for SEMs",
     "url": "https://www.notion.so/35eab062993080bfa803ecd8b446e183",
     "status": "In Progress",
@@ -767,6 +735,38 @@
     "deliverables": [
       "https://www.notion.so/35eab0629930807aa212e62435aadeef",
       "https://www.notion.so/35eab06299308033a253ffe117b330d2"
+    ]
+  },
+  {
+    "name": "CollegeVine Implementation",
+    "url": "https://www.notion.so/32dab06299308039990ee7e8e7e9ce24",
+    "status": "Incoming",
+    "start": "2026-05-14",
+    "end": "2026-05-28",
+    "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
+    "departments": [
+      "Recruiting/ Enrollment"
+    ],
+    "project_description": "Implementing CollegeVine for the customer’s Recruiting/Enrollment team, including configuration and rollout planning, to support admissions workflows and readiness for launch from Apr–May 2026.",
+    "description": "",
+    "deliverables": []
+  },
+  {
+    "name": "SPSI Program Migration & Consolidated RollupCreated to mirror the standalone project record in Rhodes Advisor Projects.",
+    "url": "https://www.notion.so/7a0ad2c01d05458f8b41bd26bbafde9e",
+    "status": "Packaging",
+    "start": "2026-05-23",
+    "end": "2026-05-15",
+    "owner_id": "user://2a3d872b-594c-810f-b824-00028ca86a22",
+    "departments": [
+      "Finance"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/d1579d1898dc465db3510627c15e81bc",
+      "https://www.notion.so/b19898c303a645a4a26fe3981d0d6073",
+      "https://www.notion.so/1ba6f1e8d1fb479fb9381152da5fb6fd"
     ]
   },
   {
