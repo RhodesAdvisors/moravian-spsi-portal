@@ -383,11 +383,11 @@ OLD_BANNER_TIMELINE_GAP_RE = re.compile(
 # subtitle paragraph and the stats grid.
 HERO_CTAS_HTML = (
     '\n\n  <div class="hero-actions">\n'
-    '    <a class="hero-cta" href="https://enrollment-performance-hub.netlify.app/" target="_blank" rel="noopener">\n'
+    '    <a class="hero-cta" href="https://enrollment-performance-hub.netlify.app/">\n'
     '      <span>Weekly Enrollment Report</span>\n'
     '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M9 7h8v8"/></svg>\n'
     '    </a>\n'
-    '    <a class="hero-cta" href="https://moravian-spsi-tech-status.vercel.app/" target="_blank" rel="noopener">\n'
+    '    <a class="hero-cta" href="https://moravian-spsi-tech-status.vercel.app/">\n'
     '      <span>Weekly Tech Report</span>\n'
     '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M9 7h8v8"/></svg>\n'
     '    </a>\n'
