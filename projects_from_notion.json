@@ -640,7 +640,7 @@
   {
     "name": "Enable upsert of Archer Social leads",
     "url": "https://www.notion.so/34cab06299308089a3caea1f9b0ade42",
-    "status": "Live / Monitoring",
+    "status": "Done",
     "start": "2026-04-13",
     "end": "2026-04-24",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
@@ -775,7 +775,7 @@
     "status": "Scoped - Not Started",
     "start": "",
     "end": "",
-    "owner_id": "",
+    "owner_id": null,
     "departments": [],
     "project_description": "",
     "description": "",
@@ -910,7 +910,7 @@
     "status": "Ongoing",
     "start": "",
     "end": "",
-    "owner_id": "",
+    "owner_id": null,
     "departments": [
       "Marketing",
       "Technology"
