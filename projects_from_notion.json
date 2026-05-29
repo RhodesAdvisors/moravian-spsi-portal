@@ -128,7 +128,7 @@
     "status": "Ongoing",
     "start": "",
     "end": "",
-    "owner_id": null,
+    "owner_id": "",
     "departments": [
       "Marketing",
       "Technology"
@@ -618,7 +618,7 @@
     "url": "https://www.notion.so/30aab062993080259652d7bad2c0000b",
     "status": "Paused",
     "start": "2026-03-16",
-    "end": "2026-04-30",
+    "end": "",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
     "departments": [
       "Technology"
@@ -649,7 +649,7 @@
     "url": "https://www.notion.so/30aab06299308023bfadf279bd6c852e",
     "status": "In Progress",
     "start": "2026-03-16",
-    "end": "2026-06-01",
+    "end": "2026-06-16",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
     "departments": [
       "Technology"
@@ -658,7 +658,8 @@
     "description": "",
     "deliverables": [
       "https://www.notion.so/d0a9d9729db74987ba0e53a2421bccb4",
-      "https://www.notion.so/86c8dfe484e34f9898fca8e596eb7108"
+      "https://www.notion.so/86c8dfe484e34f9898fca8e596eb7108",
+      "https://www.notion.so/36eab0629930807fa606c41c4d6c13bf"
     ]
   },
   {
@@ -839,7 +840,7 @@
     "url": "https://www.notion.so/33cab06299308000828df565c5abfb9a",
     "status": "In Progress",
     "start": "2026-04-20",
-    "end": "2026-05-20",
+    "end": "2026-06-23",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
     "departments": [
       "Technology"
@@ -850,7 +851,9 @@
       "https://www.notion.so/348ab062993080f3a757ecee8b8729e2",
       "https://www.notion.so/348ab062993080ef931ced346d3c18f6",
       "https://www.notion.so/348ab0629930800395bce33d161da9e9",
-      "https://www.notion.so/348ab062993080bc91d5cc266f3ff500"
+      "https://www.notion.so/348ab062993080bc91d5cc266f3ff500",
+      "https://www.notion.so/36eab062993080b58dfee31d44be5520",
+      "https://www.notion.so/36eab062993080ba8b08d8da766c1ad8"
     ]
   },
   {
@@ -891,7 +894,7 @@
     "url": "https://www.notion.so/35eab062993080bfa803ecd8b446e183",
     "status": "In Progress",
     "start": "2026-05-08",
-    "end": "2026-05-22",
+    "end": "2026-06-04",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
     "departments": [
       "Technology"
