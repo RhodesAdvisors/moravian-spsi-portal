@@ -1343,5 +1343,41 @@
     "start": "",
     "end": "",
     "characteristics": ""
+  },
+  "374ab06299308096b5efe0d6c512782d": {
+    "title": "GTM Plan",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [],
+    "status": "Starting",
+    "start": "",
+    "end": "2026-06-11",
+    "characteristics": "GTM Plan (which includes: Information collection/confirmation on details from SPSI<br>leadership and a light go-to-market plan for launching the AI cert. (Due: June 11)"
+  },
+  "374ab0629930808497c9e0bc132f9be2": {
+    "title": "Develop and deploy marketing assets",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [],
+    "status": "Not Started",
+    "start": "",
+    "end": "2026-06-18",
+    "characteristics": "Develop and deploy marketing assets: (MBA Landing page edits, MBA AI ad creative, and<br>MBA AI nurture emails) (Due: June 18)"
+  },
+  "374ab0629930807a991be4053eca8e7a": {
+    "title": "Client Approval",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [],
+    "status": "Not Started",
+    "start": "",
+    "end": "2026-06-23",
+    "characteristics": ""
+  },
+  "374ab0629930809e8074dbda4e3cba55": {
+    "title": "Launch AI Cert in Market",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [],
+    "status": "Not Started",
+    "start": "",
+    "end": "2026-06-25",
+    "characteristics": ""
   }
 }
