@@ -513,9 +513,7 @@
       "https://www.notion.so/2fdab0629930800bbe76ce327917e8a3",
       "https://www.notion.so/2fdab062993080d2b30ad5f15bca6332",
       "https://www.notion.so/2fdab062993080b6b524d4ee83a18d59",
-      "https://www.notion.so/357ab062993080d4b449ef40109061f2",
-      "https://www.notion.so/357ab06299308055b019ceedbbe38f94",
-      "https://www.notion.so/bdde2ac2f18c498ab0aefca171ece1b4"
+      "https://www.notion.so/357ab06299308055b019ceedbbe38f94"
     ]
   },
   {
@@ -953,5 +951,19 @@
       "https://www.notion.so/b19898c303a645a4a26fe3981d0d6073",
       "https://www.notion.so/1ba6f1e8d1fb479fb9381152da5fb6fd"
     ]
+  },
+  {
+    "name": "Moravian - SPSI - Program Portfolio Strategy",
+    "url": "https://www.notion.so/375ab062993081c99752ef5c3658a1cf",
+    "status": "In Progress",
+    "start": "2026-06-04",
+    "end": "2026-06-26",
+    "owner_id": "user://32dd872b-594c-8197-895f-0002cffde125",
+    "departments": [
+      "Marketing"
+    ],
+    "project_description": "",
+    "description": "",
+    "deliverables": []
   }
 ]
