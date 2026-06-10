@@ -1,19 +1,5 @@
 [
   {
-    "name": "CollegeVine technical implementation",
-    "url": "https://www.notion.so/356ab0629930806ba44ed20611363630",
-    "status": "Not Scoped",
-    "start": "",
-    "end": "",
-    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
-    "departments": [
-      "Technology"
-    ],
-    "project_description": "Placeholder for now. We have not discussed the scope of the initial implementation",
-    "description": "",
-    "deliverables": []
-  },
-  {
     "name": "Enable deposit payment for SPSI enrollment",
     "url": "https://www.notion.so/30aab062993080f1b880cfdb32da5c2c",
     "status": "Not Scoped",
@@ -630,9 +616,9 @@
   {
     "name": "Automate non-SPSI Grad admit notification and admittee response",
     "url": "https://www.notion.so/30aab062993080259652d7bad2c0000b",
-    "status": "Paused",
+    "status": "In Progress",
     "start": "2026-03-16",
-    "end": "",
+    "end": "2026-07-31",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
     "departments": [
       "Technology"
@@ -681,7 +667,7 @@
     "url": "https://www.notion.so/f4ec26b4a2f147b38c54eae69aa4d086",
     "status": "Packaging",
     "start": "2026-03-16",
-    "end": "2026-06-06",
+    "end": "2026-06-12",
     "owner_id": "user://2b1d872b-594c-81a8-bd12-00026d82191b",
     "departments": [
       "Market Research"
@@ -906,7 +892,7 @@
   {
     "name": "Transcript Upload for SEMs",
     "url": "https://www.notion.so/35eab062993080bfa803ecd8b446e183",
-    "status": "In Progress",
+    "status": "Done",
     "start": "2026-05-08",
     "end": "2026-06-04",
     "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
@@ -923,7 +909,7 @@
   {
     "name": "CollegeVine Implementation",
     "url": "https://www.notion.so/32dab06299308039990ee7e8e7e9ce24",
-    "status": "Incoming",
+    "status": "In Progress",
     "start": "2026-05-14",
     "end": "2026-06-15",
     "owner_id": "user://2aad872b-594c-8110-9641-0002671785e1",
@@ -965,5 +951,21 @@
     "project_description": "",
     "description": "",
     "deliverables": []
+  },
+  {
+    "name": "CollegeVine technical implementation",
+    "url": "https://www.notion.so/356ab0629930806ba44ed20611363630",
+    "status": "Blocked",
+    "start": "2026-06-08",
+    "end": "2026-06-23",
+    "owner_id": "user://2a3d872b-594c-818d-8984-00023aa1338a",
+    "departments": [
+      "Technology"
+    ],
+    "project_description": "The technical integration is described here. A transfer of data from and to CV.",
+    "description": "",
+    "deliverables": [
+      "https://www.notion.so/379ab062993080b895ecdb6b5158c672"
+    ]
   }
 ]
